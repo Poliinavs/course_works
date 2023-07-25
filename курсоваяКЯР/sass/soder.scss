@@ -1,0 +1,229 @@
+$osnColor:#AE5A26;
+$font: 'Oswald-Regular', sans-serif;
+$BoderRad: 12px;
+
+@font-face { /*Для заголовка*/
+    font-family: "Oswald-Regular";
+    font-style: normal;
+    src: url("../fonts/Oswald-Regular.ttf") format("truetype");
+}
+body{
+    margin:0px;
+    background-color: #657b8d;
+}
+
+.container { /*свойства для главного контейнера в котором вссе элементы*/
+    display: flex;
+    flex-wrap: wrap; /*бедет перенос на другую строку*/
+    justify-content: space-around;
+
+}
+
+.Pag {
+
+   
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+    margin-bottom: 0px;
+  
+
+    h1 {
+        display: inline-block;
+        font-family: $font;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 56px;
+        line-height: 80px;
+    text-align: center; 
+    margin-bottom: 0px;
+    width: 90%;
+    border-radius: $BoderRad;
+    // background-color: #9b9bb2a2;
+  
+    }
+    .PagImg {
+        height: 100%;
+        flex-basis: 80%;
+        
+        &> div { /* Дочерний селектор */
+            margin-top: 20px;
+            width: 304px;
+            height:100%;
+        }
+    }   
+    
+    img {
+        border-radius: $BoderRad;
+        margin-top:0px;
+       width: 200px;
+        height: 200px;
+ &:hover{
+     transition: all 1s ease-out;
+     transform: scale(1.05);
+     z-index: 0;
+
+ }
+   
+    }
+    .MainInfP   {
+        z-index: 1;
+        text-align: center;
+        margin-top: -62px;
+      
+        p{
+            font-family: $font;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 26px;
+       padding: 3px 10px 3px 10px;
+            display: inline-block;
+            background-color: #000;
+            color: white;
+            margin-bottom: -14px;
+        border-radius: $BoderRad;
+        }
+        
+        .rect { /*основные свойства верххних прямоугольников со списком*/
+            background-color: #9D9DB6;
+            border-radius:$BoderRad;
+            width: 202px;
+            height: 160px;
+           
+            text-align: center;
+            vertical-align: center;
+            padding:0px 0 10px 13px;
+            margin-top:-10px;
+  
+        }
+
+        ul {
+            display: inline; 
+            margin-left: 0;
+            padding-left: 15px;
+            padding-top: 5px;
+            margin-top: 0px;
+            list-style: none;
+        }
+ 
+         li { /*основные настройки шрифта в списках*/
+           
+            line-height: 2.0;
+            text-align: left;
+            font-family: 'Roboto Slab';
+            font-weight: 600;
+            font-size: 16px;
+            color: #000000;
+        }
+ 
+        li:before { /*кружок перед текстом*/
+ 
+            content: '';
+            display: inline-block;
+            height: 8px;
+            width: 8px;
+            vertical-align: middle;
+            border-radius: 50%;
+            background-color: #000;
+            margin-right: 15px; /*оступ между маркером и текстом*/
+        }
+ 
+        a {
+            text-decoration: none;
+        }
+ 
+            a:hover {
+                text-decoration: underline;
+                color: #000000;
+            }
+
+    }   
+}
+
+
+
+.hover-effect-scale{
+    list-style:none;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    /* Настройки маркированного списка */
+    li {
+        position: relative;
+        display: inline-block;
+        margin: 0;
+        box-shadow: 1px 3px 1px 0 rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        h3{
+            color: #fff;
+            margin: 5px;
+        }
+        p{
+            color: #fff;
+            margin: 5px;
+        }
+        a {
+            display: block;
+            text-decoration: none;
+
+            color: #fff;
+            padding: 3px 10px 3px 10px;
+            background: black;
+            border-radius: $BoderRad;
+            margin: 0 auto;
+            font-family: $font;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 16px;
+            transition: all 0.4s ease-in-out;
+            
+        }
+        &:hover > div {
+            position: absolute;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+        }
+    }
+    li{
+        a:hover {
+    background: #454545;
+        }
+        
+        /* Выезжающий блок с текстом */ 
+        &> div {
+
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        
+        }
+        div {
+
+            opacity: 0;
+            background-color: rgba(0, 0, 0, 0.35); /* Фон блока при наведении */
+            transition: all 0.4s ease-in-out;
+            color: #fff;
+        }
+        img {
+            transition: all 0.2s linear;
+     
+        }
+        &:hover img {
+
+            transform: scale(1.3);
+        }
+        
+        &:hover div {
+            opacity: 1;
+        }
+
+     
+    }
+
+}
+     

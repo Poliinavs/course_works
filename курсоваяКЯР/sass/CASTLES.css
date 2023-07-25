@@ -1,0 +1,464 @@
+@charset "UTF-8";
+/*Шрифты*/
+@font-face {
+  /*Для заголовка*/
+  font-family: "$font";
+  font-style: normal;
+  src: url("fonts/$font.ttf") format("truetype");
+}
+
+@font-face {
+  /*Для Текста*/
+  font-family: "$fontInf";
+  font-style: normal;
+  src: url("fonts/$fontInf.ttf") format("truetype");
+}
+
+body {
+  margin: 0;
+  background-color: #8fa4b8c5;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main {
+  width: 60%;
+  height: 100%;
+}
+
+.container {
+  /*свойства для главного контейнера в котором вссе элементы*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  /*бедет перенос на другую строку*/
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.Osncont {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  vertical-align: flex-start;
+}
+
+.Osncont h1 {
+  font-family: '$font', sans-serif;
+  font-weight: 700;
+  font-size: 56px;
+  display: inline-block;
+  margin-top: -80px;
+  text-align: center;
+}
+
+.glavn {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 14.9;
+  margin-top: -500px;
+  height: 100%;
+  z-index: 0;
+}
+
+.glavn .menu {
+  position: fixed;
+  margin-top: 200px;
+}
+
+.glavn .menu img {
+  width: 40px;
+  height: 40px;
+}
+
+.glavn .menu a:hover {
+  background-color: none;
+}
+
+.glavn .dropdown-content {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  margin-left: -10px;
+  margin-left: -16px;
+}
+
+.glavn .dropdown-content a {
+  color: black;
+  font-size: 15px;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.glavn .dropdown-content a:hover {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.glavn .dropdown {
+  /*начало выпадающего списка*/
+  display: inline-block;
+}
+
+.glavn .dropdown:hover .dropdown-content, .glavn .dropdown:active .dropdown-content {
+  display: block;
+}
+
+.glavn img {
+  height: 50px;
+  width: 50px;
+}
+
+.glavn .navig {
+  font-family: '$font', sans-serif;
+  font-weight: 500;
+  font-size: 26px;
+  position: fixed;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  background-color: rgba(254, 245, 232, 0);
+  border-radius: 12px;
+  border: 3px solid black;
+  width: 30px;
+  padding: 5px 4px 5px 4px;
+  z-index: 5;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.glavn .navig:hover {
+  border: none;
+}
+
+.glavn .navig .dropdown-content {
+  background-color: #88a2bfd3;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  margin-right: -6px;
+  top: -63px;
+}
+
+.glavn .navig .dropdown-content:first-child a:hover {
+  background-color: rgba(106, 52, 106, 0.55);
+}
+
+.str {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 400px;
+}
+
+.str img {
+  position: fixed;
+}
+
+/*первая картинка с краткой инфой */
+.fr {
+  margin-top: 100px;
+  height: 630px;
+}
+
+.fr h1 {
+  font-family: '$font', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+}
+
+.fr .Inf {
+  margin-top: 0px;
+  width: 100%;
+  height: 142px;
+}
+
+.fr .MainIm {
+  width: 100%;
+  height: 80%;
+}
+
+.Inf p {
+  display: inline-block;
+  margin-bottom: 0px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  font-family: '$font', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  width: 100%;
+}
+
+.OsnInf2 {
+  height: 1700px;
+}
+
+.OsnInf {
+  height: 1150px;
+}
+
+.OsnInf img, .OsnInf2 img {
+  width: 80%;
+  height: width/2;
+  margin-top: 20px;
+}
+
+.Pag {
+  margin-top: 60px;
+}
+
+.Pag .PagImg {
+  height: 100%;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  background-color: #2470a048;
+}
+
+.Pag .PagImg > div {
+  /* Дочерний селектор */
+  width: 220px;
+}
+
+/*Основные блоки с фотками + описание*/
+article {
+  font-family: '$fontInf', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 36px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  width: 90%;
+  height: 100%;
+  text-align: justify;
+}
+
+article section {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+article section h2 {
+  display: block;
+  border-bottom: 5px solid #f9f9f8;
+}
+
+article h2, article h3 {
+  font-family: '$font', sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+}
+
+article h3 {
+  font-size: 13px;
+  margin-top: -30px;
+}
+
+article svg {
+  /*для линии*/
+  margin-top: -25px;
+}
+
+article p {
+  /*для текста под картинками*/
+  width: 58%;
+  line-height: 36px;
+}
+
+article img {
+  border-radius: 12px;
+  margin-top: 10px;
+  width: 100%;
+  height: 70%;
+}
+
+@media (max-width: 768px) {
+  main {
+    width: 100%;
+  }
+  .str {
+    display: none;
+  }
+  .fr {
+    margin-top: 100px;
+  }
+  .glavn {
+    display: none;
+  }
+  article p {
+    width: 98%;
+    font-size: 14px;
+    line-height: 26px;
+  }
+  article h2, article h3 {
+    font-size: 26px;
+  }
+  article h3 {
+    font-size: 13px;
+  }
+}
+
+slideshow {
+  width: 90%;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  margin: 100px 0;
+  z-index: 1;
+}
+
+slideshow slideshow-item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  -webkit-animation: slideanim 40s infinite;
+          animation: slideanim 40s infinite;
+  pointer-events: none;
+}
+
+slideshow slideshow-item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-animation: zoom 40s infinite;
+          animation: zoom 40s infinite;
+}
+
+slideshow slideshow-item:nth-child(1),
+slideshow slideshow-item:nth-child(1) img {
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+}
+
+slideshow slideshow-item:nth-child(2),
+slideshow slideshow-item:nth-child(2) img {
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+}
+
+slideshow slideshow-item:nth-child(3),
+slideshow slideshow-item:nth-child(3) img {
+  -webkit-animation-delay: 20s;
+          animation-delay: 20s;
+}
+
+slideshow slideshow-item:nth-child(4),
+slideshow slideshow-item:nth-child(4) img {
+  -webkit-animation-delay: 30s;
+          animation-delay: 30s;
+}
+
+slideshow slideshow-item-text {
+  max-width: 50%;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 20px 30px;
+  font-family: Verdana, sans-serif;
+}
+
+slideshow slideshow-item-text h5 {
+  font-size: 22px;
+  margin: 0 0 10px 0;
+  color: #BFE2FF;
+}
+
+slideshow slideshow-item-text p {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+@-webkit-keyframes slideanim {
+  12.5% {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  25% {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  37.5% {
+    opacity: 0;
+  }
+}
+
+@keyframes slideanim {
+  12.5% {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  25% {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  37.5% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes zoom {
+  50% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+}
+
+@keyframes zoom {
+  50% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .slideshow {
+    width: 100%;
+  }
+  .slideshow-item-text {
+    max-width: 75%;
+  }
+}
+
+@media screen and (max-width: 456px) {
+  .slideshow-item-text {
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+  }
+  .slideshow-item-text h5 {
+    font-size: 18px;
+  }
+  .slideshow-item-text p {
+    font-size: 13px;
+  }
+}
+/*# sourceMappingURL=CASTLES.css.map */

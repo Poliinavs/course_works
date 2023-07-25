@@ -1,0 +1,157 @@
+@charset "UTF-8";
+/*osnVerst*/
+@font-face {
+  /*Для заголовка*/
+  font-family: "Oswald-Regular";
+  font-style: normal;
+  src: url("../fonts/Oswald-Regular.ttf") format("truetype");
+}
+
+/*Верстка*/
+.container {
+  /*свойства для главного контейнера в котором вссе элементы*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  /*бедет перенос на другую строку*/
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+body {
+  margin: 0;
+  background: #638095;
+}
+
+main {
+  height: 100%;
+}
+
+.Pag {
+  width: 90%;
+  margin-top: 0px;
+}
+
+.Pag h1 {
+  margin-top: 0px;
+  background-color: #724a7a52;
+}
+
+.Pag .PagImg {
+  height: 100%;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  background-color: #5f7b8e;
+}
+
+.Pag .PagImg > div {
+  /* Дочерний селектор */
+  width: 220px;
+}
+
+GlavnInf {
+  height: 100%;
+  width: 90%;
+  border-bottom: 3px dashed black;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+GlavnInf Im {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40%;
+  height: 100%;
+}
+
+GlavnInf Im img {
+  margin: 10px;
+  width: 356px;
+  height: 328px;
+}
+
+GlavnInf information {
+  width: 59%;
+}
+
+GlavnInf information Paragraph {
+  display: inline-block;
+  width: 90%;
+  font-family: 'Oswald-Regular', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 25px;
+  line-height: 37px;
+  margin-top: 0px;
+}
+
+GlavnInf audioTrack {
+  /*для аудидорожки*/
+  width: 100%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #536e8145;
+}
+
+GlavnInf audioTrack img {
+  height: 80px;
+  width: 80px;
+}
+
+GlavnInf figure {
+  width: 60%;
+}
+
+GlavnInf audio {
+  width: 80%;
+}
+
+GlavnInf Im, GlavnInf information {
+  height: 70%;
+}
+
+@media (max-width: 1016px) {
+  GlavnInf {
+    width: 100%;
+  }
+}
+
+.fr {
+  margin-top: 100px;
+  border-top: none;
+}
+
+@media (max-width: 750px) {
+  GlavnInf {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  GlavnInf Im {
+    width: 100%;
+  }
+  GlavnInf Im img {
+    margin: 10px;
+    width: 80%;
+    height: 40%;
+  }
+  GlavnInf information {
+    width: 100%;
+  }
+  audioTrack figure {
+    width: 100%;
+  }
+  audioTrack img {
+    display: none;
+  }
+}
+/*# sourceMappingURL=podkast.css.map */

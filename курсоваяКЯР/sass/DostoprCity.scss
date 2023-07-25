@@ -1,0 +1,299 @@
+$font: Oswald-Regular;
+$fontInf:Oswald-Light;
+$fontREG: 'Oswald-Regular', sans-serif;
+$BoderRad: 12px;
+$osnColor:#AE5A26;
+
+/*Шрифты*/
+
+@font-face { /*Для заголовка*/
+    font-family: "$font";
+    font-style: normal;
+    src: url("fonts/$font.ttf") format("truetype");
+}
+@font-face { /*Для Текста*/
+    font-family: "$fontInf";
+    font-style: normal;
+    src: url("fonts/$fontInf.ttf") format("truetype");
+}
+@mixin text($family, $weight, $size){
+    font-family: '$font', $family;
+    font-weight: $weight;
+    font-size: $size;
+}
+body {
+    margin: 0;
+    background-color: #6a85a1;
+    justify-content: flex-start;
+
+}
+main {
+    width: 60%;
+    height:100%;
+}
+.Pag{
+    margin-top: 0px;
+    h1 {
+   
+
+    }
+    .PagImg {
+        height: 100%;
+        flex-basis: 100%;
+        background: linear-gradient(to top,  #48515cad, #6a85a1);
+        &> div { /* Дочерний селектор */
+            
+            width: 220px;
+        }
+    }
+}
+
+
+
+.container { /*свойства для главного контейнера в котором вссе элементы*/
+    display: flex;
+    flex-wrap: wrap; /*бедет перенос на другую строку*/
+    justify-content: space-around;
+    border: none;
+}
+
+.glavn{
+    justify-content: flex-end;
+    flex:1;
+     width: 14.9;
+     margin-top:205px;
+  height: 100%;
+
+     
+            .dropdown-content {
+                display: none;
+                position: fixed;
+                z-index: 1;
+                margin-left: -10px;
+                a {
+                    color:black;
+                    font-size: 15px;
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    display: block;
+                }
+                a:hover {
+                    background-color: rgba(106, 52, 106, 0.55);
+                }
+            }
+
+            .menu{
+                position: fixed;
+                margin-top:200px;
+            img{
+                width: 40px;
+                height: 40px;
+            }
+            .dropdown-content {
+            margin-left: -16px;
+            }
+            a:hover{
+                background-color:rgba(255, 255, 255, 0);
+            }
+            }
+
+            .dropdown { /*начало выпадающего списка*/
+                display: inline-block;
+                &:hover .dropdown-content, &:active .dropdown-content {
+                    display: block;
+                }
+            }
+img{
+    height:50px;
+    width: 50px;
+}
+.navig{
+    @include text(sans-serif, 500, 26px );
+
+    position: fixed;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    
+    // background-color: rgb(254, 245, 232);
+    border:3px black solid;
+     border-radius: $BoderRad;
+    // padding: 10px 5px 10px 5px;
+    width: 30px;
+    padding: 5px 4px 5px 4px;
+    z-index: 5;
+    &:hover{
+        border:none;
+    }
+     .dropdown-content{
+         background-color: #88a2bfd3;
+         transform: rotate(90deg);
+        margin-right:-6px;
+       top:-63px;
+
+     }
+ }
+
+ }
+
+ .str{
+     justify-content: center;
+     align-items: flex-end;
+     height:400px;
+     img{
+         position: fixed;
+     }
+ }
+/*первая картинка с краткой инфой */
+
+.fr{
+    margin-top:100px;
+    height: 100%;
+    h1 {
+        text-align: center;
+        display: inline-block;
+        margin:0px;
+        @include text(sans-serif, 700, 36px );
+        text-align: center;
+        font-style: normal;
+        line-height: 53px;
+    }
+    .Inf {
+        margin-top:0px;
+        width: 100%;
+        height: 142px;
+        text-align: center;
+    }
+    p{
+        display: inline-block;
+        margin:10px 0px -10px 0px;
+        width: 100%;
+        font-style: normal;
+        font-size: 14px;
+        line-height: 21px;
+    }
+    img{
+     
+        margin-top: 10px;
+       width: 100%;
+        height: 60%;
+    }
+
+}
+
+.Inf p {
+    display: inline-block;
+    margin-bottom: 0px;
+    align-self:flex-end;
+    @include text(sans-serif, 400, 14px );
+    width: 100%;
+}
+
+
+
+
+.OsnInf2 {
+    height: 1700px;
+}
+.OsnInf {
+    height: 1150px;
+}
+.OsnInf img, .OsnInf2 img {
+    width:80%;
+    height:width/2;
+    margin-top:20px;
+}
+
+
+
+/*Основные блоки с фотками + описание*/
+
+article{
+    @include text(sans-serif, 300, 24px );
+    line-height: 36px;
+    justify-content: center;
+    flex-shrink: 1;
+    width: 90%;
+    height: 100%;
+    text-align: justify;
+    font-family: '$fontInf', sans-serif;
+    section{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+ width: 100%;
+ h2 {
+    display: block;
+   border-bottom: 5px solid rgb(249, 249, 248);
+   }  
+    }
+    h2, h3 {
+        @include text(sans-serif, 400, 36px );
+        text-align: center;
+    }
+   h3 {
+        font-size: 13px;
+        margin-top: -10px;
+        margin-top: -30px;
+    }
+    svg { /*для линии*/
+        margin-top:-25px;
+    }
+  
+    p { /*для текста под картинками*/
+        width: 88%;
+        line-height: 36px;
+    }
+    img{
+        border-radius: $BoderRad;
+        margin-top: 10px;
+        width: 100%;
+        height: 70%;
+    }
+
+}
+@media (max-width:320px) {
+    .fr{
+        height: 100%;
+        img{
+     
+            margin-top: 10px;
+           width: 100%;
+            height: 60%;
+        }
+    }
+
+}
+@media  (max-width:768px) { 
+    main{
+        width: 100%;
+    }
+    .str{
+        display: none;
+    }
+    .fr{
+        margin-top:100px;
+        h1{
+            font-size: 23px;
+        }
+    }
+    .glavn{
+        display: none;
+    }
+    article{
+        p{
+            width: 98%;
+            font-size: 14px;
+            line-height: 26px;
+        }
+        h2{
+            font-size: 26px;
+        }
+        h3 {
+            font-size: 13px;}
+    }
+}
+
+
+
+
+

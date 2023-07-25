@@ -1,0 +1,182 @@
+@charset "UTF-8";
+.Hed {
+  margin-top: 0px;
+  width: 90%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  margin-top: 0px;
+  height: 100px;
+  background-color: #6d6c8a;
+  position: fixed;
+  z-index: 15;
+}
+
+.Hed a {
+  color: black;
+  text-decoration: none;
+}
+
+.Hed .row {
+  width: 70%;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.Hed .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #61607d;
+  width: 40%;
+  z-index: 3;
+  margin: 20px 0px 0 -30px;
+  text-align: center;
+}
+
+.Hed .dropdown-content a {
+  font-size: 36px;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  margin: 20px 0px 20px 0px;
+}
+
+.Hed .dropdown-content a:hover {
+  background-color: #686781c0;
+}
+
+.Hed #sem {
+  display: none;
+}
+
+.Hed #sem + label button {
+  position: relative;
+  z-index: -1;
+  width: 100%;
+  background-color: rgba(0, 0, 255, 0);
+  border: none;
+  display: block;
+  margin: 0px 10px 0 10px;
+}
+
+.Hed #sem + label button img {
+  margin-bottom: -19px;
+  width: 45px;
+}
+
+.Hed #sem:checked + label div {
+  display: block;
+}
+
+.Hed #sem:checked + label button img {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  margin-bottom: -10px;
+}
+
+.Hed .button {
+  /*Основное для кнопок*/
+  font-family: "Oswald-Regular", sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  border-radius: 12px;
+  margin: 0px;
+  text-align: center;
+  width: 15%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.Hed .logo {
+  width: 28%;
+}
+
+.Hed .logo img {
+  width: 100%;
+}
+
+.Hed menu {
+  display: none;
+}
+
+.Hed #sm {
+  display: none;
+}
+
+.Hed #sm + label button {
+  position: relative;
+  z-index: -1;
+  width: 70%;
+  background-color: rgba(0, 0, 255, 0);
+  border: none;
+  display: block;
+}
+
+.Hed #sm:checked + label div {
+  display: block;
+}
+
+@media (max-width: 939px) {
+  .Hed {
+    width: 100%;
+  }
+  .Hed .logo {
+    width: 227px;
+    height: 47px;
+  }
+}
+
+@media (max-width: 836px) {
+  .Hed {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .Hed .row {
+    display: none;
+  }
+  .Hed menu {
+    display: block;
+    margin-top: 0px;
+    height: 100%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    padding: 0px;
+  }
+  .Hed menu img {
+    margin-top: 15px;
+    height: 50px;
+  }
+  .Hed menu .dropdown-content {
+    width: 50%;
+    margin-top: 5px;
+    height: 330px;
+  }
+  .Hed menu .dropdown-content a {
+    margin: 20px;
+  }
+  .Hed .logo {
+    margin-right: 10px;
+    margin-bottom: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .Hed menu .dropdown-content a {
+    font-size: 26px;
+  }
+}
+/*# sourceMappingURL=HED.css.map */

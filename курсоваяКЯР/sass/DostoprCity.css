@@ -1,0 +1,337 @@
+@charset "UTF-8";
+/*Шрифты*/
+@font-face {
+  /*Для заголовка*/
+  font-family: "$font";
+  font-style: normal;
+  src: url("fonts/$font.ttf") format("truetype");
+}
+
+@font-face {
+  /*Для Текста*/
+  font-family: "$fontInf";
+  font-style: normal;
+  src: url("fonts/$fontInf.ttf") format("truetype");
+}
+
+body {
+  margin: 0;
+  background-color: #6a85a1;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+main {
+  width: 60%;
+  height: 100%;
+}
+
+.Pag {
+  margin-top: 0px;
+}
+
+.Pag .PagImg {
+  height: 100%;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(#48515cad), to(#6a85a1));
+  background: linear-gradient(to top, #48515cad, #6a85a1);
+}
+
+.Pag .PagImg > div {
+  /* Дочерний селектор */
+  width: 220px;
+}
+
+.container {
+  /*свойства для главного контейнера в котором вссе элементы*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  /*бедет перенос на другую строку*/
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border: none;
+}
+
+.glavn {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 14.9;
+  margin-top: 205px;
+  height: 100%;
+}
+
+.glavn .dropdown-content {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  margin-left: -10px;
+}
+
+.glavn .dropdown-content a {
+  color: black;
+  font-size: 15px;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.glavn .dropdown-content a:hover {
+  background-color: rgba(106, 52, 106, 0.55);
+}
+
+.glavn .menu {
+  position: fixed;
+  margin-top: 200px;
+}
+
+.glavn .menu img {
+  width: 40px;
+  height: 40px;
+}
+
+.glavn .menu .dropdown-content {
+  margin-left: -16px;
+}
+
+.glavn .menu a:hover {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.glavn .dropdown {
+  /*начало выпадающего списка*/
+  display: inline-block;
+}
+
+.glavn .dropdown:hover .dropdown-content, .glavn .dropdown:active .dropdown-content {
+  display: block;
+}
+
+.glavn img {
+  height: 50px;
+  width: 50px;
+}
+
+.glavn .navig {
+  font-family: "$font", sans-serif;
+  font-weight: 500;
+  font-size: 26px;
+  position: fixed;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  border: 3px black solid;
+  border-radius: 12px;
+  width: 30px;
+  padding: 5px 4px 5px 4px;
+  z-index: 5;
+}
+
+.glavn .navig:hover {
+  border: none;
+}
+
+.glavn .navig .dropdown-content {
+  background-color: #88a2bfd3;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  margin-right: -6px;
+  top: -63px;
+}
+
+.str {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 400px;
+}
+
+.str img {
+  position: fixed;
+}
+
+/*первая картинка с краткой инфой */
+.fr {
+  margin-top: 100px;
+  height: 100%;
+}
+
+.fr h1 {
+  text-align: center;
+  display: inline-block;
+  margin: 0px;
+  font-family: "$font", sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  text-align: center;
+  font-style: normal;
+  line-height: 53px;
+}
+
+.fr .Inf {
+  margin-top: 0px;
+  width: 100%;
+  height: 142px;
+  text-align: center;
+}
+
+.fr p {
+  display: inline-block;
+  margin: 10px 0px -10px 0px;
+  width: 100%;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.fr img {
+  margin-top: 10px;
+  width: 100%;
+  height: 60%;
+}
+
+.Inf p {
+  display: inline-block;
+  margin-bottom: 0px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  font-family: "$font", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  width: 100%;
+}
+
+.OsnInf2 {
+  height: 1700px;
+}
+
+.OsnInf {
+  height: 1150px;
+}
+
+.OsnInf img, .OsnInf2 img {
+  width: 80%;
+  height: width/2;
+  margin-top: 20px;
+}
+
+/*Основные блоки с фотками + описание*/
+article {
+  font-family: "$font", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 36px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  width: 90%;
+  height: 100%;
+  text-align: justify;
+  font-family: '$fontInf', sans-serif;
+}
+
+article section {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+article section h2 {
+  display: block;
+  border-bottom: 5px solid #f9f9f8;
+}
+
+article h2, article h3 {
+  font-family: "$font", sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  text-align: center;
+}
+
+article h3 {
+  font-size: 13px;
+  margin-top: -10px;
+  margin-top: -30px;
+}
+
+article svg {
+  /*для линии*/
+  margin-top: -25px;
+}
+
+article p {
+  /*для текста под картинками*/
+  width: 88%;
+  line-height: 36px;
+}
+
+article img {
+  border-radius: 12px;
+  margin-top: 10px;
+  width: 100%;
+  height: 70%;
+}
+
+@media (max-width: 320px) {
+  .fr {
+    height: 100%;
+  }
+  .fr img {
+    margin-top: 10px;
+    width: 100%;
+    height: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    width: 100%;
+  }
+  .str {
+    display: none;
+  }
+  .fr {
+    margin-top: 100px;
+  }
+  .fr h1 {
+    font-size: 23px;
+  }
+  .glavn {
+    display: none;
+  }
+  article p {
+    width: 98%;
+    font-size: 14px;
+    line-height: 26px;
+  }
+  article h2 {
+    font-size: 26px;
+  }
+  article h3 {
+    font-size: 13px;
+  }
+}
+/*# sourceMappingURL=DostoprCity.css.map */

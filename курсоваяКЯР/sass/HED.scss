@@ -1,0 +1,199 @@
+
+$osnColor:#AE5A26;
+$font: 'Oswald-Regular', sans-serif;
+$BoderRad: 12px;
+
+.Hed{
+    margin-top: 0px;
+   width: 90%;
+    align-items:center;
+  justify-content:end;
+  margin-top:0px;
+  height: 100px;
+  background-color: #6d6c8a;
+  position: fixed;
+  z-index:15;
+    a {
+        color: black;
+        text-decoration: none;
+    }
+  .row{
+      width: 70%;
+      height: 100%;
+      align-items: center;
+      flex: 1;
+  }
+  .dropdown-content {
+     display: none;
+    position: absolute;
+    background-color: #61607d;
+    // background-color: #cac2c2de;
+    width: 40%;
+    // box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 3;
+    
+
+    margin:20px 0px 0 -30px;
+    text-align: center;
+    a {
+        font-size: 36px; 
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        margin: 20px 0px 20px 0px;
+    }
+    a:hover {
+        background-color:  #686781c0;
+
+    }
+}
+  #sem{
+    display: none;
+  }
+
+#sem + label button { //для активной области кнопки
+  position: relative;
+  z-index: -1;
+  width: 100%;
+  background-color: rgba(0, 0, 255, 0);
+   border: none;
+  display: block;
+ margin: 0px 10px 0 10px;
+  img{
+    margin-bottom:-19px;
+    width: 45px;
+  }
+ 
+}
+#sem:checked + label div {
+  display: block;
+
+}
+#sem:checked + label button{
+  img{
+    transform: rotate(180deg);
+    margin-bottom:-10px;
+  }
+}
+ 
+
+              .button { /*Основное для кнопок*/
+                font-family:$font;
+                font-weight: 400;
+                font-size: 36px; 
+                border-radius:$BoderRad;
+                margin: 0px;
+                text-align: center;
+                 width:15% ;
+                 flex: 1;
+
+            }
+          .logo{
+            width: 28%;
+            img{
+              width: 100%;
+            }
+          } 
+          menu{
+            display: none;
+               
+            } 
+            #sm{
+              display: none;}
+          
+          #sm + label button { //для активной области кнопки
+            position: relative;
+            z-index: -1;
+            width: 70%;
+            background-color: rgba(0, 0, 255, 0);
+            border: none;
+            
+            display: block;
+          }
+          #sm:checked + label div {
+          
+            display: block;
+          }
+         
+}
+
+@media  (max-width:939px) { 
+    .Hed{
+        width: 100%;
+       .logo{
+         width: 227px;
+         height: 47px;
+       }
+    }
+}
+@media  (max-width:836px) { 
+  .Hed{
+    justify-content: space-around;
+flex:1;
+      .row{
+        display:none;
+      }
+         menu {
+           display:block;
+        margin-top: 0px;
+        height: 100%; 
+        flex:1;
+        padding: 0px;
+        img{
+margin-top: 15px;
+          height: 50px;
+
+        } 
+        .dropdown-content {
+            width: 50%;
+           
+            margin-top: 5px;
+            height:330px;
+            a {
+              
+              margin: 20px;
+            }
+        }       
+        }
+        .logo{
+            margin-right: 10px;
+            margin-bottom:14px;
+        }
+
+}
+}
+
+@media  (max-width:400px) { 
+  .Hed{
+       menu {
+        .dropdown-content {
+            a {
+              font-size: 26px;
+
+            }
+        }       
+        }
+}
+}
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+

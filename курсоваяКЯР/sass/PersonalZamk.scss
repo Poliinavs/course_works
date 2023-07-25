@@ -1,0 +1,241 @@
+$font: Oswald-Regular;
+$fontInf:Oswald-Light;
+$fontREG: 'Oswald-Regular', sans-serif;
+$BoderRad: 12px;
+$osnColor:#AE5A26;
+/*Шрифты*/
+@font-face { /*Для заголовка*/
+    font-family: "$font";
+    font-style: normal;
+    src: url("fonts/$font.ttf") format("truetype");
+}
+@font-face { /*Для Текста*/
+    font-family: "$fontInf";
+    font-style: normal;
+    src: url("fonts/$fontInf.ttf") format("truetype");
+}
+@mixin text($family, $weight, $size){
+    font-family: '$font', $family;
+    font-weight: $weight;
+    font-size: $size;
+}
+body {
+    margin: 0;
+    background-color: #7c94af;
+    justify-content: flex-start;
+}
+main {
+    width: 100%;
+    height:100%;
+}
+.Pag{
+    margin-top: 0px;
+    .PagImg {
+        height: 100%;
+        flex-basis: 100%;
+        background: linear-gradient(to top,  #2b3541ad, #7c94af);
+        &> div { /* Дочерний селектор */
+            width: 220px;
+        }
+    }
+}
+.container { /*свойства для главного контейнера в котором вссе элементы*/
+    display: flex;
+    flex-wrap: wrap; /*будет перенос на другую строку*/
+}
+.fr{
+    margin-top:100px;
+    height: 90%;
+    h1 {
+        text-align: center;
+        display: inline-block;
+        @include text(sans-serif, 700, 56px );
+        display: inline-block;
+        margin: 10px;
+    }
+    .Inf {
+        margin-top:0px;
+        width: 100%;
+        height: 142px;
+        text-align: center;
+    }
+   menu{
+       display: inline-block;
+       width: 100%;
+       ul{
+        list-style:none;
+        margin:0;
+        padding: 0;
+      }
+     
+       li:before{
+        content: '';
+        display: inline-block;
+        height:16px;
+        width: 16px;
+        vertical-align: middle;
+        border-radius:50%;
+        background-color:#000;
+        margin-right:5px;
+        margin-top: -10px;
+      }
+       a{
+        @include text(sans-serif, 400, 33px );
+        flex-direction: column;
+        color: black;
+        text-decoration:none;
+       } 
+   }
+    img{
+        margin-top: 10px;
+       width: 80%;
+    }
+}
+.Inf p {
+    display: inline-block;
+    margin-bottom: 0px;
+    align-self:flex-end;
+    @include text(sans-serif, 400, 14px );
+    width: 100%;
+}
+/*Основные блоки с фотками + описание*/
+
+article{
+    @include text(sans-serif, 300, 24px );
+    line-height: 36px;
+    justify-content: center;
+    flex-shrink: 1;
+    width: 90%;
+    height: 100%;
+    text-align: justify;
+    section{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+ width: 100%;
+ h2 {
+    display: block;
+   border-bottom: 5px solid rgb(249, 249, 248);
+   }  
+    }
+    h2, h3 {
+        @include text(sans-serif, 400, 46px );
+    }
+   h3 {
+        font-size: 13px;
+        margin-top: -10px;
+        margin-top: -30px;
+    }
+    svg { /*для линии*/
+   
+        margin-top:-25px;
+    }
+    p { /*для текста под картинками*/
+       width: 75%;
+        line-height: 36px;
+    }
+    img{
+        border-radius: $BoderRad;
+        margin-top: 10px;
+        width: 48%;
+        height: 70%;
+    }
+    &:nth-child(4){
+        img{
+
+            width: 98%;
+        }
+    }
+    &:nth-child(3){
+        img{
+            width: 48%;  
+        }
+    }
+    &:nth-child(4){
+        img{
+            width: 98%;  
+        }
+    }
+
+}
+
+@media (max-width:320px) {
+    .fr{
+        height: 100%;
+        img{
+     
+            margin-top: 10px;
+           width: 100%;
+            height: 60%;
+        }
+    }
+
+}
+@media  (max-width:768px) { 
+main{
+    width: 100%;
+}
+.str{
+    display: none;
+}
+.fr{
+    margin-top:100px;
+    
+    h1{
+        font-size: 26px;
+    
+    }
+}
+
+    .glavn{
+        display: none;
+    
+    }
+    article{
+        p{
+            width: 98%;
+            font-size: 14px;
+            line-height: 26px;
+        }
+        
+        h2, h3 {
+            font-size: 26px;
+        }
+        h3 {
+            font-size: 13px;}
+            img{
+                width: 100%;
+            }
+            &:nth-child(3){
+                img{
+                    width: 100%;  
+                }
+            }
+    }
+    .fr{
+    menu{
+
+        a{
+        font-size: 18px;
+        }
+        li:before{
+            content: '';
+            display: inline-block;
+            height:9px;
+            width: 9px;
+            vertical-align: middle;
+            border-radius:50%;
+            background-color:#000;
+            margin-right:5px;
+            margin-top: 0px;
+        }
+        
+        }
+    }
+
+}
+
+
+
+
+

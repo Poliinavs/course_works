@@ -1,0 +1,395 @@
+@charset "UTF-8";
+@font-face {
+  /*Для заголовка*/
+  font-family: "Oswald-Regular";
+  font-style: normal;
+  src: url("../fonts/Oswald-Regular.ttf") format("truetype");
+}
+
+body {
+  margin: 0px;
+  width: 100%;
+}
+
+/*Верстка*/
+.container {
+  /*свойства для главного контейнера в котором вссе элементы*/
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  /*бедет перенос на другую строку*/
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.Osn {
+  /*первая страница с картикой и текстом*/
+  height: 893px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.Osn img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.Osn h2 {
+  display: inline-block;
+  font-family: "Oswald-Regular", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 78px;
+  line-height: 101px;
+  color: #FFFFFF;
+  position: absolute;
+  width: 50%;
+  top: 100px;
+}
+
+/*страница с картинками */
+.Pag {
+  height: 100%;
+}
+
+.Pag h1 {
+  display: inline-block;
+  font-family: "Oswald-Regular", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 80px;
+  text-align: center;
+}
+
+.Pag .PagImg {
+  height: 75%;
+  -ms-flex-preferred-size: 90%;
+      flex-basis: 90%;
+}
+
+.Pag .PagImg > div {
+  /* Дочерний селектор */
+  width: 254px;
+  height: 100%;
+}
+
+.Pag img {
+  margin-top: 0px;
+  width: 100%;
+  height: 450px;
+}
+
+.Pag img:first-child:hover {
+  -webkit-box-shadow: 1px 1px #524949, 2px 2px #716A6A, 3px 3px #716A6A, 4px 4px #716A6A, 5px 5px #7D7878, 6px 6px #807B7B, 7px 7px #807B7B;
+          box-shadow: 1px 1px #524949, 2px 2px #716A6A, 3px 3px #716A6A, 4px 4px #716A6A, 5px 5px #7D7878, 6px 6px #807B7B, 7px 7px #807B7B;
+  -webkit-transform: translateX(-7px);
+  transform: translateX(-7px);
+}
+
+.Pag .MainInfP img {
+  width: 80px;
+  height: 80px;
+}
+
+.Pag .MainInfP img:hover {
+  -webkit-animation: bounce 1s;
+          animation: bounce 1s;
+}
+
+.Pag .MainInfP p {
+  font-family: "Oswald-Regular", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 47px;
+  text-align: center;
+  margin-bottom: -20px;
+}
+
+@-webkit-keyframes bounce {
+  0%, 20%, 60%, 100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  80% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 60%, 100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  80% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+}
+
+.button {
+  /*Основное для кнопок*/
+  font-family: "Oswald-Regular", sans-serif;
+  border-radius: 12px;
+  padding: 10px 10px 10px 10px;
+  margin: 0px 25px 0 25px;
+}
+
+.button a {
+  text-decoration: none;
+  color: black;
+}
+
+/*картинки в кругах*/
+.castle {
+  height: 100%;
+  width: 90%;
+  background: #253B4A;
+}
+
+.castle img {
+  margin-top: 15px;
+  height: 250px;
+}
+
+.castle .Infcastle {
+  width: 270px;
+  height: 500px;
+}
+
+.castle h1 {
+  font-family: "Oswald-Regular", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 53px;
+  color: #FFFFFF;
+}
+
+.castle h2 {
+  display: none;
+}
+
+.castle figcaption {
+  height: 10%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.castle figcaption img {
+  height: 28px;
+  width: 29px;
+}
+
+.castle figcaption .dropdon {
+  /*начало выпадающего списка*/
+  display: inline-block;
+}
+
+.castle figcaption .dropdon:hover .dropdowCont {
+  display: block;
+}
+
+.castle figcaption .dropdowCont {
+  display: none;
+  position: absolute;
+  margin-left: -226px;
+  margin-top: -358px;
+}
+
+.castle figcaption iframe {
+  width: 295px;
+  height: 506px;
+  border-radius: 12px;
+  z-index: 0;
+}
+
+.scale {
+  overflow: hidden;
+}
+
+.scale img {
+  -webkit-transition: 2s;
+  transition: 2s;
+  display: block;
+}
+
+.scale img:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.castle .button, .znachki .button {
+  font-size: 19px;
+  background: #AE5A26;
+  height: 25px;
+}
+
+.znachki .button:hover, .Infcastle .button:hover, form .button:hover {
+  background: rgba(0, 0, 0, 0);
+  color: #AE5A26;
+  -webkit-box-shadow: inset 0 0 0 3px  #AE5A26;
+          box-shadow: inset 0 0 0 3px  #AE5A26;
+}
+
+/*Значки с кнопкой*/
+.znachki {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+.znachki .osn {
+  width: 250px;
+}
+
+.znachki .osn h1 {
+  display: inline-block;
+  font-size: 25px;
+  text-align: center;
+}
+
+.znachki .osn img {
+  margin-top: 20px;
+  height: 80px;
+}
+
+.znachki .osn:hover {
+  background: #b7b4b4a3;
+  border-radius: 12px;
+}
+
+.Hed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+}
+
+.Hed .dropdown-content {
+  margin-top: 13px;
+}
+
+@media (max-width: 939px) {
+  .Hed {
+    width: 100%;
+  }
+}
+
+@media (max-width: 836px) {
+  .Hed menu img {
+    margin-top: 13px;
+  }
+  .Hed menu .dropdown-content {
+    margin-top: 5px;
+  }
+  .Hed menu .dropdown-content a:first-child {
+    margin-top: 40px;
+  }
+}
+
+/*Форма*/
+.Formosn {
+  margin-top: -30px;
+  width: 60%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #FFFFFF;
+  height: 100%;
+  text-align: center;
+}
+
+.Formosn input {
+  display: block;
+  border: none;
+  background: #f2f2f2;
+  padding: 12px;
+  border-radius: 12px;
+  width: 60%;
+  height: 51px;
+  font-size: 20px;
+}
+
+.Formosn label {
+  font-family: "Oswald-Regular", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 74px;
+}
+
+.Formosn section {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 150px;
+}
+
+.Formosn .button {
+  background-color: #AE5A26;
+}
+
+@media (max-width: 732px) {
+  .Osn {
+    text-align: center;
+  }
+  .Osn h2 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 454px) {
+  .Pag h1 {
+    font-size: 36px;
+  }
+  .Pag .PagImg {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .castle, .Formosn {
+    width: 100%;
+  }
+  .Osn {
+    text-align: center;
+  }
+  .Osn h2 {
+    font-size: 68px;
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=osn.css.map */

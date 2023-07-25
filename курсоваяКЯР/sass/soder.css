@@ -1,0 +1,243 @@
+@charset "UTF-8";
+@font-face {
+  /*Для заголовка*/
+  font-family: "Oswald-Regular";
+  font-style: normal;
+  src: url("../fonts/Oswald-Regular.ttf") format("truetype");
+}
+
+body {
+  margin: 0px;
+  background-color: #657b8d;
+}
+
+.container {
+  /*свойства для главного контейнера в котором вссе элементы*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  /*бедет перенос на другую строку*/
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.Pag {
+  width: 100%;
+  height: 100%;
+  margin-top: 100px;
+  margin-bottom: 0px;
+}
+
+.Pag h1 {
+  display: inline-block;
+  font-family: "Oswald-Regular", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 80px;
+  text-align: center;
+  margin-bottom: 0px;
+  width: 90%;
+  border-radius: 12px;
+}
+
+.Pag .PagImg {
+  height: 100%;
+  -ms-flex-preferred-size: 80%;
+      flex-basis: 80%;
+}
+
+.Pag .PagImg > div {
+  /* Дочерний селектор */
+  margin-top: 20px;
+  width: 304px;
+  height: 100%;
+}
+
+.Pag img {
+  border-radius: 12px;
+  margin-top: 0px;
+  width: 200px;
+  height: 200px;
+}
+
+.Pag img:hover {
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  z-index: 0;
+}
+
+.Pag .MainInfP {
+  z-index: 1;
+  text-align: center;
+  margin-top: -62px;
+}
+
+.Pag .MainInfP p {
+  font-family: "Oswald-Regular", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  padding: 3px 10px 3px 10px;
+  display: inline-block;
+  background-color: #000;
+  color: white;
+  margin-bottom: -14px;
+  border-radius: 12px;
+}
+
+.Pag .MainInfP .rect {
+  /*основные свойства верххних прямоугольников со списком*/
+  background-color: #9D9DB6;
+  border-radius: 12px;
+  width: 202px;
+  height: 160px;
+  text-align: center;
+  vertical-align: center;
+  padding: 0px 0 10px 13px;
+  margin-top: -10px;
+}
+
+.Pag .MainInfP ul {
+  display: inline;
+  margin-left: 0;
+  padding-left: 15px;
+  padding-top: 5px;
+  margin-top: 0px;
+  list-style: none;
+}
+
+.Pag .MainInfP li {
+  /*основные настройки шрифта в списках*/
+  line-height: 2.0;
+  text-align: left;
+  font-family: 'Roboto Slab';
+  font-weight: 600;
+  font-size: 16px;
+  color: #000000;
+}
+
+.Pag .MainInfP li:before {
+  /*кружок перед текстом*/
+  content: '';
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  vertical-align: middle;
+  border-radius: 50%;
+  background-color: #000;
+  margin-right: 15px;
+  /*оступ между маркером и текстом*/
+}
+
+.Pag .MainInfP a {
+  text-decoration: none;
+}
+
+.Pag .MainInfP a:hover {
+  text-decoration: underline;
+  color: #000000;
+}
+
+.hover-effect-scale {
+  list-style: none;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  /* Настройки маркированного списка */
+}
+
+.hover-effect-scale li {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  -webkit-box-shadow: 1px 3px 1px 0 rgba(0, 0, 0, 0.08);
+          box-shadow: 1px 3px 1px 0 rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.hover-effect-scale li h3 {
+  color: #fff;
+  margin: 5px;
+}
+
+.hover-effect-scale li p {
+  color: #fff;
+  margin: 5px;
+}
+
+.hover-effect-scale li a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  padding: 3px 10px 3px 10px;
+  background: black;
+  border-radius: 12px;
+  margin: 0 auto;
+  font-family: "Oswald-Regular", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.hover-effect-scale li:hover > div {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.hover-effect-scale li {
+  /* Выезжающий блок с текстом */
+}
+
+.hover-effect-scale li a:hover {
+  background: #454545;
+}
+
+.hover-effect-scale li > div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.hover-effect-scale li div {
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  /* Фон блока при наведении */
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  color: #fff;
+}
+
+.hover-effect-scale li img {
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.hover-effect-scale li:hover img {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+
+.hover-effect-scale li:hover div {
+  opacity: 1;
+}
+/*# sourceMappingURL=soder.css.map */
