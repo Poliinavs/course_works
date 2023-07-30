@@ -1,0 +1,12 @@
+
+--— Протокол —— 
+Дата: 30.01.23 15:08:53 —— 
+--— Параметры —— 
+ -in: C:\instit\kurs2-1\kurs\APV\Debug\in.txt
+ -out: C:\instit\kurs2-1\kurs\APV\Debug\in.txt.out
+ -log: C:\instit\kurs2-1\kurs\APV\Debug\in.txt.log
+--— Исходные данные —— 
+Кол-во символов: 1110
+Кол-во строк: 75
+Пропущенно: 0
+Тест:без ошибок

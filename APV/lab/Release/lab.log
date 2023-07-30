@@ -1,0 +1,34 @@
+﻿  Error.cpp
+  FST.cpp
+C:\instit\kurs2-1\kurs\APV\lab\FST.cpp(65,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\instit\kurs2-1\kurs\APV\lab\FST.cpp(143,31): warning C4267: =: преобразование из "size_t" в "short"; возможна потеря данных
+C:\instit\kurs2-1\kurs\APV\lab\FST.cpp(145,23): warning C4018: <: несоответствие типов со знаком и без знака
+  Generation.cpp
+  GRB.cpp
+  In.cpp
+  IT.cpp
+  lab.cpp
+  LexAnalize.cpp
+C:\instit\kurs2-1\kurs\APV\lab\LexAnalize.cpp(29,20): warning C4018: <=: несоответствие типов со знаком и без знака
+C:\instit\kurs2-1\kurs\APV\lab\LexAnalize.cpp(499,22): warning C4018: <: несоответствие типов со знаком и без знака
+C:\instit\kurs2-1\kurs\APV\lab\LexAnalize.cpp(584,22): warning C4018: <: несоответствие типов со знаком и без знака
+C:\instit\kurs2-1\kurs\APV\lab\LexAnalize.cpp(618,22): warning C4018: <: несоответствие типов со знаком и без знака
+C:\instit\kurs2-1\kurs\APV\lab\LexAnalize.cpp(622,33): warning C4018: <: несоответствие типов со знаком и без знака
+C:\instit\kurs2-1\kurs\APV\lab\LexAnalize.cpp(659,22): warning C4018: <: несоответствие типов со знаком и без знака
+C:\instit\kurs2-1\kurs\APV\lab\LexAnalize.cpp(663,33): warning C4018: <: несоответствие типов со знаком и без знака
+C:\instit\kurs2-1\kurs\APV\lab\LexAnalize.cpp(752,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\instit\kurs2-1\kurs\APV\lab\LexAnalize.cpp(790,22): warning C4018: <: несоответствие типов со знаком и без знака
+C:\instit\kurs2-1\kurs\APV\lab\LexAnalize.cpp(817,24): warning C4018: <: несоответствие типов со знаком и без знака
+C:\instit\kurs2-1\kurs\APV\lab\LexAnalize.cpp(937,21): warning C4018: <: несоответствие типов со знаком и без знака
+  Log.cpp
+  LT.cpp
+  MFST.cpp
+  Out.cpp
+  Parm.cpp
+  Polish.cpp
+  Semant.cpp
+  Создание кода
+  Previous IPDB not found, fall back to full compilation.
+  All 834 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  lab.vcxproj -> C:\instit\kurs2-1\kurs\APV\Release\APV.exe

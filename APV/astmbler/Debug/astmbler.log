@@ -1,0 +1,3 @@
+﻿  Assembling asm.asm...
+asm.asm(133): warning A6004: procedure argument or local not referenced : kvadr_y
+  astmbler.vcxproj -> C:\instit\kurs2\kurs\APV\Debug\astmbler.exe

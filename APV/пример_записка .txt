@@ -1,0 +1,44 @@
+number function kvadr( number x , line y)
+{
+ new number m;
+ new line mk;
+ new line ma = 'hellow  ';
+ mk=concat (ma,y);
+ newline print 'concat(ma,mb):   ';
+ print mk;
+ m=npow(x,5);
+ newline print 'x pow y=';
+ print m;
+return m;
+}
+number function fi(number x, number y)
+{
+new bool ba=true;
+new number m;
+if(ba){
+m=(x+y)*5;
+newline print '(x+y)*5=';
+}
+return m; 
+};
+main
+{
+new number k=d101;
+new number p;
+k=fi(k,4);
+print k;
+..comment 
+p=kvadr(2,'word');
+if(k>=p){
+new number ffffffffffffffffffffff;
+new line ma='hellow  how';
+ffffffffffffffffffffff=lenght(ma);
+newline print 'lenght(hellow  how):   ';
+print ffffffffffffffffffffff;
+}
+if(k!=p){
+newline print 'second condition';
+}
+newline print 'oooosssn';
+return 0; 
+};
