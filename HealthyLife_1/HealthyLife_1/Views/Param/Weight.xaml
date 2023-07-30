@@ -1,0 +1,128 @@
+﻿<Window x:Class="HealthyLife_1.Views.Param.Weight"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HealthyLife_1.Views.Param"
+        xmlns:viewModel="clr-namespace:HealthyLife_1.ViewModels.Param.Pokazat"
+        
+        mc:Ignorable="d"
+        Title="Weight" Height="450" Width="400"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+       >
+    <Window.DataContext>
+        <viewModel:WeightView/>
+    </Window.DataContext>
+
+    <Grid Background="#0C3B2E">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="56*"/>
+            <RowDefinition Height="205*"/>
+            <RowDefinition Height="119*"/>
+            <RowDefinition Height="70*"/>
+        </Grid.RowDefinitions>
+        <Image Cursor="Hand" VerticalAlignment="Center"  Source="/Img/Application/back.png" Width="39" HorizontalAlignment="Left" Margin="10,0,0,0" Height="40" >
+            <Image.InputBindings>
+                <MouseBinding Gesture="LeftClick" Command="{Binding Exit}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"  />
+            </Image.InputBindings>
+        </Image>
+        <TextBlock Text="Вес" VerticalAlignment="Center" HorizontalAlignment="Center"
+                   Foreground="#f0ede6"
+                           FontSize="30"
+                           FontWeight="Medium"
+                           FontFamily="verdana" Height="36" Width="94"/>
+        <TextBlock Grid.Row="1" Margin="40,0,0,23" HorizontalAlignment="Left" Text="{Binding currentDate}"  Foreground="#f0ede6" FontSize="19" Width="150" />
+        <TextBlock Grid.Row="1" Margin="310,0,0,23" HorizontalAlignment="Left" Text="{Binding currentTime}"  Foreground="#f0ede6" FontSize="19" Width="50" />
+        <Border Background="#f0ede6" CornerRadius="30" Grid.Row="1" Margin="50,38,50,17" >
+            <Image  Width="400"  Height="150"   Source="/Img/Main/Param/weight.png"/>
+        </Border>
+
+        <StackPanel  Grid.Row="2" >
+            <WrapPanel Orientation="Horizontal">
+                <TextBlock Text="Значение показателя"
+                            Foreground="#f0ede6"
+                            Margin="20 0 0 0"
+                           FontSize="19"
+                           FontWeight="Medium"
+                           FontFamily="Montessart"
+                          />
+                <TextBlock Text="кг"
+                           Foreground="#f0ede6"
+                            Margin="90 0 0 0"
+                           FontSize="19"
+                           FontWeight="Medium"
+                           FontFamily="Montessart"
+                          />
+            </WrapPanel>
+
+
+            <TextBox  x:Name="txtUser"
+                               FontSize="20"
+                      Margin="0 10 0 20"
+                               FontWeight="Medium"
+                               FontFamily="Montessart"
+                      MaxLength="10"
+                                 Text="{Binding AmountPokazat,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                 Height="30"
+                                    Width="360"
+                                 BorderBrush="#f0ede6" BorderThickness="0,0,0,2" 
+                             />
+            <ComboBox   Grid.Row="2" HorizontalAlignment="Left" Margin="23 0 0 0" Width="200"  SelectedIndex="{Binding Condition}">
+                <!--<ComboBox SelectedIndex="{Binding SelectedIndexProperty, Mode=TwoWay}"-->
+                <ComboBox.Resources>
+                    <Style TargetType="{x:Type ComboBox}">
+                        <Setter Property="FontSize" Value="16" />
+                        <Setter Property="Foreground" Value="Black" />
+                        <Setter Property="Background" Value="White" />
+                        <Setter Property="BorderBrush" Value="Gray" />
+                        <Setter Property="BorderThickness" Value="1" />
+                        <!-- Дополнительные стили для ComboBox -->
+                    </Style>
+                </ComboBox.Resources>
+                <ComboBoxItem Content="До обеда" />
+                <ComboBoxItem Content="После обеда" />
+            </ComboBox>
+        </StackPanel>
+        <StackPanel Grid.Row="3">
+            <TextBlock Text="{Binding ErorPokazat}"
+                           Foreground="#bd380b"
+                           FontSize="12"
+                           FontWeight="Medium"
+                           FontFamily="Montessart"
+                          Margin=" 20,0, 0 ,0"
+                               TextWrapping="Wrap"/>
+
+            <Button  x:Name="btnexit"
+                            Background="#FFBA00"
+                           
+                            Width="200"
+                VerticalAlignment="Bottom"
+                   
+                    HorizontalAlignment="Center"
+                            Content="Добавить"
+                            Foreground="#0C3B2E"
+                            FontSize="16"
+                           FontFamily="Montsaerrart" 
+                            Cursor="Hand" 
+              
+               Command="{Binding ADDParamSugar}"    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}" Margin="0,9,0,9">
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="200" Height="40" CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+
+        </StackPanel>
+
+    </Grid>
+</Window>

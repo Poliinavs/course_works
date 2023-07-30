@@ -1,0 +1,57 @@
+﻿<Window x:Class="HealthyLife_1.Views.MainApp.NotePage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HealthyLife_1.Views.MainApp"
+        mc:Ignorable="d"
+        Title="NotePage" Height="484" Width="400"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Topmost="True"
+        WindowStartupLocation="CenterScreen"
+           xmlns:viewModel="clr-namespace:HealthyLife_1.ViewModels.Main">
+    <Window.DataContext>
+        <viewModel:NoteModel/>
+    </Window.DataContext>
+    <Grid Background="#0C3B2E">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="361*"/>
+            <RowDefinition Height="63*"/>
+        </Grid.RowDefinitions>
+        <Image Cursor="Hand" VerticalAlignment="Center"  Source="/Img/Application/back.png" Width="39" HorizontalAlignment="Left" Margin="10,0,0,0" Height="40" >
+            <Image.InputBindings>
+                <MouseBinding Gesture="LeftClick" Command="{Binding Exit}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"  />
+            </Image.InputBindings>
+        </Image>
+        <TextBlock Text="Заметки" VerticalAlignment="Center" HorizontalAlignment="Center"
+                   Foreground="#f0ede6"
+                           FontSize="30"
+                           FontWeight="Medium"
+                           FontFamily="verdana" />
+        <StackPanel Grid.Row="1">
+            <TextBlock Foreground="#f0ede6" Grid.Row="1" Margin="0 0 0 0" HorizontalAlignment="Center" Text="{Binding currentDate}"  FontSize="19" />
+            <TextBlock Foreground="#f0ede6" Grid.Row="1" Margin="0 0 0 0" HorizontalAlignment="Center" Text="{Binding currentTime}"  FontSize="19" />
+            <Border Background="#f0ede6" CornerRadius="30" Grid.Row="2" Margin="50,10,50,10" >
+                <TextBlock>
+                      <TextBox Margin="10 10 10 10" Foreground="Black" MaxLength="260" TextWrapping="Wrap"  Height="270" Text="{Binding noteText,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"   Style="{DynamicResource WwodBox}"/>
+                </TextBlock>
+            </Border>
+        </StackPanel>
+        <StackPanel Grid.Row="3">
+            <TextBlock TextAlignment="Center" Text="{Binding ErrorNote}"
+                           Foreground="#bd380b"
+                           FontSize="12"
+                           FontWeight="Medium"
+                           FontFamily="Montessart"
+                          Margin=" 20,0, 0 ,0"
+                               TextWrapping="Wrap"/>
+            <Button Command="{Binding AddNote}" Style="{DynamicResource MyButtonStyle}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"  Content="Добавить" Grid.Row="3"  Width="200"/>
+
+        </StackPanel>
+       
+
+    </Grid>
+</Window>

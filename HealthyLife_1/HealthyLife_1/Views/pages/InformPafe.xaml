@@ -1,0 +1,48 @@
+﻿<Page x:Class="HealthyLife_1.Views.pages.InformPafe"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HealthyLife_1.Views.pages"
+      mc:Ignorable="d" 
+      xmlns:viewModel="clr-namespace:HealthyLife_1.ViewModels.Main"
+      Title="InformPafe">
+
+
+    <Page.DataContext>
+        <viewModel:MainModel/>
+    </Page.DataContext>
+
+
+    <Grid Background="#f0ede6">
+        <ScrollViewer>
+            <StackPanel>
+
+        
+                <TextBlock  Foreground="#FFBA00" Style="{DynamicResource PageBlockText}" HorizontalAlignment="Center" FontSize="45" FontWeight="Bold" Text="О нас"/>
+            <Separator Height="0.8" Background="#0C3B2E" Margin="10 0"/>
+            <TextBlock TextWrapping="Wrap" Style="{StaticResource InfText}" Text="{Binding AboutUs}"/>
+
+            <TextBlock  Foreground="#FFBA00" Style="{DynamicResource PageBlockText}" HorizontalAlignment="Center" FontSize="45" FontWeight="Bold" Text="Справочная информация"/>
+
+                <TextBlock   Margin="20 0 0 0" Foreground="#FFBA00" Style="{DynamicResource PageBlockText}" HorizontalAlignment="Left" FontSize="35" FontWeight="Bold" Text="Норма воды"/>
+            <Separator Height="0.8" Background="#0C3B2E" Margin="10 0"/>
+            <TextBlock TextWrapping="Wrap" Style="{StaticResource InfText}" Text="{Binding Woter}"/>
+
+                <TextBlock  Margin="20 0 0 0" Foreground="#FFBA00" Style="{DynamicResource PageBlockText}" HorizontalAlignment="Left" FontSize="35" FontWeight="Bold" Text="Йога"/>
+            <Separator Height="0.8" Background="#0C3B2E" Margin="10 0"/>
+            <TextBlock TextWrapping="Wrap" Style="{StaticResource InfText}" Text="{Binding Yoga}"/>
+
+                <TextBlock  Foreground="#FFBA00"  Margin="20 0 0 0" Style="{DynamicResource PageBlockText}" HorizontalAlignment="Left" FontSize="35" FontWeight="Bold" Text="Парметры"/>
+            <Separator Height="0.8" Background="#0C3B2E" Margin="10 0"/>
+            <TextBlock TextWrapping="Wrap" Style="{StaticResource InfText}" Text="{Binding Param}"/>
+
+
+            <TextBlock  Foreground="#FFBA00" Style="{DynamicResource PageBlockText}" Margin="20 0 0 0" HorizontalAlignment="Left" FontSize="35" FontWeight="Bold" Text="Quiz"/>
+            <Separator Height="0.8" Background="#0C3B2E" Margin="10 0"/>
+            <TextBlock TextWrapping="Wrap" Style="{StaticResource InfText}" Text="{Binding Quiz}"/>
+          
+        </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

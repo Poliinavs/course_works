@@ -1,0 +1,82 @@
+﻿<Page x:Class="HealthyLife_1.Views.pages.PrmPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HealthyLife_1.Views.pages"
+         xmlns:shugar="clr-namespace:HealthyLife_1.CustomControls.Params"
+      mc:Ignorable="d" 
+        xmlns:viewModel="clr-namespace:HealthyLife_1.ViewModels.Param"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PrmPage">
+    <Page.DataContext>
+        <viewModel:PrmView/>
+    </Page.DataContext>
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="3*"/>
+
+        </Grid.RowDefinitions>
+        <WrapPanel   Orientation="Horizontal">
+            <WrapPanel.Background>
+                <ImageBrush ImageSource="/HealthyLife_1;component/img/Application/fone3.jpg"/>
+            </WrapPanel.Background>
+            <Border Cursor="Hand"  BorderBrush="Red"  Style="{DynamicResource CanvasSt2}"  >
+                <Border.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding btnAddSugar}"  CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page}}}" />
+                </Border.InputBindings>
+                <StackPanel>
+                    <TextBlock  Style="{StaticResource PageBlockText1}" Text="Caxaр"/>
+                    <Image Source="/HealthyLife_1;component/Img/Main/Param/sugar.png" Style="{StaticResource PageBlockImg}" />
+                </StackPanel>
+            </Border>
+            <Border BorderBrush="#c726a7"  Style="{DynamicResource CanvasSt2}"  >
+                <Border.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ShowPressure}"  CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page}}}" />
+                </Border.InputBindings>
+                <StackPanel>
+                    <TextBlock  Style="{DynamicResource PageBlockText1}" Text="Давление"/>
+                    <Image Source="/HealthyLife_1;component/Img/Main/Param/pressure.png" Style="{DynamicResource PageBlockImg}" Margin="0 0 0 10"/>
+                </StackPanel>
+            </Border>
+           
+            <Border BorderBrush="#3d783e"  Style="{DynamicResource CanvasSt2}"  >
+                <Border.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ShowWeight}"  CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page}}}" />
+                </Border.InputBindings>
+                <StackPanel>
+                    <TextBlock  Style="{DynamicResource PageBlockText1}" Text="Вес"/>
+                    <Image Source="/HealthyLife_1;component/Img/Main/Param/weight.png" Style="{DynamicResource PageBlockImg}" Margin="0 0 0 10"/>
+                </StackPanel>
+            </Border>
+
+        </WrapPanel>
+        <WrapPanel x:Name="Pokazat" Background="#f0ede6"   Grid.Row="2">
+
+            <Image Cursor="Hand" Margin="140 0 0 0" Source="/HealthyLife_1;component/Img/Main/left_arrow.png" Width="70" VerticalAlignment="Top" HorizontalAlignment="Left" >
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding LeftShugar}"  CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page}}}"  />
+                </Image.InputBindings>
+            </Image>
+
+            <shugar:ShugarParam  Margin="-10 -40 0 0" x:Name="Param"/>
+
+
+
+            <Image Cursor="Hand"  Source="/HealthyLife_1;component/Img/Main/right_arrow.png" Width="70" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="130 0 0 0">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding RightShugar}"  CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page}}}"  />
+                </Image.InputBindings>
+            </Image>
+
+
+        </WrapPanel>
+
+
+
+
+
+
+    </Grid>
+</Page>

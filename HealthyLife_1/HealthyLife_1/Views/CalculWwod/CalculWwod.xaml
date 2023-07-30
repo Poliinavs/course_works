@@ -1,0 +1,140 @@
+﻿<Window x:Class="HealthyLife_1.Views.CalculWwod.CalculWwod"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HealthyLife_1.Views.CalculWwod"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        mc:Ignorable="d"
+         xmlns:viewModel="clr-namespace:HealthyLife_1.ViewModels.CalculFolder"
+        
+       Topmost="True"
+        Title="CalculWwod" Height="420" Width="400"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+       >
+    <Window.DataContext>
+        <viewModel:MealModel/>
+    </Window.DataContext>
+
+    <Grid Background="#0C3B2E">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="59*"/>
+            <RowDefinition Height="49*"/>
+            <RowDefinition Height="221*"/>
+
+            <RowDefinition Height="91*"/>
+        </Grid.RowDefinitions>
+        <Image Cursor="Hand" VerticalAlignment="Center"  Source="/Img/Application/back.png" Width="39" HorizontalAlignment="Left" Margin="10,0,0,0" Height="40" >
+            <Image.InputBindings>
+                <MouseBinding Gesture="LeftClick" Command="{Binding Exit}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"  />
+            </Image.InputBindings>
+        </Image>
+        <!--<Button Width="40"  Content="X" HorizontalAlignment="Left" Click="exit" />-->
+        <TextBlock Text="Ввод продукта"  HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Foreground="#f0ede6"
+                           FontSize="30"
+                           FontWeight="SemiBold"
+                           FontFamily="verdana" Height="36" Width="254"  />
+
+        <TextBlock Text="{Binding Meal}"  HorizontalAlignment="Left"
+                   Grid.Row="1"
+                   VerticalAlignment="Center"
+                   Foreground="#f0ede6"
+                           FontSize="30"
+                   Margin="10,0,0,0"
+                           FontWeight="SemiBold"
+                           FontFamily="verdana" Height="36" Width="139"  />
+
+        <TextBlock  HorizontalAlignment="Left" Grid.Row="1" Foreground="#FFBA00" Margin="328,10,0,0"  Style="{DynamicResource YogaNumber}" Text="{Binding Time}" Width="62"/>
+
+
+        <StackPanel  Grid.Row="3">
+            <TextBlock Text="{Binding ErorButton}"
+                           Foreground="#bd380b"
+                           FontSize="12"
+                           FontWeight="Medium"
+                           FontFamily="Montessart"
+                          Margin=" 20,0, 0 ,0"
+                               TextWrapping="Wrap"/>
+            <Button Command="{Binding AddRez}" Margin="0 12 0 0" Style="{DynamicResource MyButtonStyle}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"  Content="Добавить" Grid.Row="3"  Width="200"/>
+
+        </StackPanel>
+       
+        <Border CornerRadius="30" Grid.Row="2" Margin="10,10,10,0" Background="#45685C">
+            <StackPanel>
+                <WrapPanel Margin="10 10 0 0">
+                    <TextBlock  Text="Ккал в 1 " Style="{DynamicResource WwodText}" />
+                    <TextBlock  Foreground="#FFBA00" Margin="0 10 0 0"  Text="{Binding Measure}" Style="{DynamicResource WwodText}" />
+                    <TextBlock  Text=":" Margin="2 10 0 0"  Style="{DynamicResource WwodText}" />
+                    <TextBox  Text="{Binding Kkal,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="200" MaxLength="3" Style="{DynamicResource WwodBox}"/>
+                </WrapPanel>
+                <Separator Panel.ZIndex="2" Height="1" Background="#FFBA00" Margin="20 3"/>
+                <TextBlock Text="{Binding ErrorKkal}"
+                           Foreground="#bd380b"
+                           FontSize="12"
+                           FontWeight="Medium"
+                           FontFamily="Montessart"
+                          Margin=" 20,0, 0 ,0"
+                               TextWrapping="Wrap"/>
+                <WrapPanel Margin="10 10 0 0">
+                    <TextBlock  Text="Вес"  Style="{StaticResource WwodText}" />
+                    <TextBlock  Text="(" Margin="4 10 0 0"  Style="{DynamicResource WwodText}" />
+                    <TextBlock Foreground="#FFBA00"  Text="{Binding Measure}" Margin="0 10 0 0"  Style="{DynamicResource WwodText}" />
+                    <TextBlock  Text=")" Margin="0 10 0 0" Style="{DynamicResource WwodText}" />
+                    <TextBox  Text="{Binding Weight,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" MaxLength="3" Style="{StaticResource WwodBox}"/>
+                </WrapPanel>
+                <Separator Panel.ZIndex="2" Height="1" Background="#FFBA00" Margin="20 3"/>
+                <TextBlock Text="{Binding ErorWeight}"
+                           Foreground="#bd380b"
+                           FontSize="12"
+                           FontWeight="Medium"
+                           FontFamily="Montessart"
+                          Margin=" 20,0, 0 ,0"
+                               TextWrapping="Wrap"/>
+                <WrapPanel Margin="10 10 0 0">
+                    <TextBlock  Text="Изменить вес:"  Style="{StaticResource WwodText}" />
+
+
+
+                    <!--<RadioButton   x:Name="radioButton1" Style="{StaticResource MyCheckBoxStyle}"  CommandParameter="{Binding Mg, Mode=TwoWay}" Content="Мг" GroupName="MyRadioGroup" >
+                        <RadioButton.InputBindings>
+                            <MouseBinding Gesture="LeftClick" Command="{Binding NewMeasure}" CommandParameter="Мг"     />
+                        </RadioButton.InputBindings>
+                    </RadioButton>-->
+                    <RadioButton x:Name="radioButton2"  IsEnabled="{Binding NewMeasure }" Style="{StaticResource MyCheckBoxStyle}" Content="Г" GroupName="MyRadioGroup" >
+                        <RadioButton.InputBindings>
+                            <MouseBinding Gesture="LeftClick" Command="{Binding NewMeasure}" CommandParameter="Г"     />
+                        </RadioButton.InputBindings>
+                    </RadioButton>
+                    
+                    <RadioButton x:Name="radioButton3" Style="{StaticResource MyCheckBoxStyle}" Content="Кг" GroupName="MyRadioGroup" >
+                        <RadioButton.InputBindings>
+                            <MouseBinding Gesture="LeftClick" Command="{Binding NewMeasure}" CommandParameter="Кг"     />
+                        </RadioButton.InputBindings>
+                    </RadioButton>
+                    <RadioButton   x:Name="radioButton4" Style="{StaticResource MyCheckBoxStyle}" Content="Мл" GroupName="MyRadioGroup" >
+                        <RadioButton.InputBindings>
+                            <MouseBinding Gesture="LeftClick" Command="{Binding NewMeasure}" CommandParameter="Мл"     />
+                        </RadioButton.InputBindings>
+                    </RadioButton>
+
+                </WrapPanel>
+                <Separator Panel.ZIndex="2" Height="1" Background="#FFBA00" Margin="20 3"/>
+            </StackPanel>
+
+
+
+
+
+
+        </Border>
+
+
+
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,172 @@
+﻿<Window x:Class="HealthyLife_1.Views.MainPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HealthyLife_1.Views"
+       xmlns:viewModel="clr-namespace:HealthyLife_1.ViewModels.Main"
+        
+         xmlns:elem="clr-namespace:HealthyLife_1.CustomControls.Application" xmlns:system="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+         WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Title="MainView" Height="864"  WindowState="Maximized">
+
+    <Window.DataContext>
+        <viewModel:MainModelContex/>
+    </Window.DataContext>
+
+    <Grid>
+        <!--Loaded="AddFrame" >-->
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="37*"/>
+            <RowDefinition Height="413*"/>
+            <!--<RowDefinition Height="79*"/>-->
+        </Grid.RowDefinitions>
+        <!--<elem:header >
+
+        </elem:header>-->
+        <Grid Grid.Row="0" Height="73" Background="#45685C">
+            <TextBlock Text="HealthyLife" VerticalAlignment="Center" HorizontalAlignment="Center"
+                        Foreground="White"
+                           FontSize="50"
+                           FontWeight="Medium"
+                           FontFamily="verdana"/>
+            
+            <Image  Source="/HealthyLife_1;component/img/Application/home.png" Stretch="Uniform"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    Margin="10 10 10 10"
+                     Cursor="Hand" >
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding ReturnHome}"  />
+                </Image.InputBindings>
+            </Image>
+            <Button x:Name="btnexit"
+                HorizontalAlignment="Right"
+                Margin="0 0 10 0"
+                            Background="#FFBA00"
+                            BorderThickness="0"
+                            Width="40"
+                             Height="40"
+                            Content="X"
+                            Foreground="#0C3B2E"
+                            FontSize="16"
+                           FontFamily="Montsaerrart" 
+                            Cursor="Hand"
+                            Grid.Column="2" 
+                 Command="{Binding Exit}">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#FFBA00"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#0C3B2E"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="40" Height="40" CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+
+        </Grid>
+       
+            <!--<Frame x:Name="Pages" Height="793" NavigationUIVisibility="Hidden"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+            Source="{Binding Uri }"
+            Content="{Binding Page }">
+
+            </Frame>-->
+
+
+          <StackPanel Margin="0,71,0,0" Grid.RowSpan="2">
+            <Frame x:Name="Pages" Height="720" NavigationUIVisibility="Hidden"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+            Source="{Binding Uri }"
+            Content="{Binding Page }">
+
+            </Frame>
+            <Grid x:Name="footer" Height="73" Background="#45685C" >
+                <WrapPanel   Orientation="Horizontal">
+                    <WrapPanel  Cursor="Hand" Style="{DynamicResource Footer}" >
+                        <WrapPanel.InputBindings>
+                            <MouseBinding Gesture="LeftClick" Command="{Binding Calcul}"  />
+                        </WrapPanel.InputBindings>
+                        <Image Source="/HealthyLife_1;component/Img/Main/food.png" Width="50"/>
+                        <TextBlock  Style="{DynamicResource PageBlockText}" Foreground="White"  Margin="10 0 0 0" VerticalAlignment="Center" Text="Питание"/>
+                    </WrapPanel>
+                    <WrapPanel  Cursor="Hand" Style="{DynamicResource Footer}" >
+                        <WrapPanel.InputBindings>
+                            <MouseBinding Gesture="LeftClick" Command="{Binding Pokazat}"  />
+                        </WrapPanel.InputBindings>
+                        <Image Source="/HealthyLife_1;component/Img/Main/health1.png" Width="50"/>
+                        <TextBlock  Style="{DynamicResource PageBlockText}" Foreground="White"  Margin="10 0 0 0" VerticalAlignment="Center" Text="Здоровье"/>
+                    </WrapPanel>
+                    <WrapPanel  Cursor="Hand" Style="{DynamicResource Footer}">
+                        <WrapPanel.InputBindings>
+                            <MouseBinding Gesture="LeftClick" Command="{Binding statistic}"  />
+                        </WrapPanel.InputBindings>
+                        <Image Source="/HealthyLife_1;component/Img/Main/statistics.png" Width="50"/>
+                        <TextBlock  Style="{DynamicResource PageBlockText}" Foreground="White"  Margin="10 0 0 0" VerticalAlignment="Center" Text="Статистика"/>
+                    </WrapPanel>
+                    <WrapPanel  Cursor="Hand" Style="{DynamicResource Footer}" >
+                        <WrapPanel.InputBindings>
+                            <MouseBinding Gesture="LeftClick" Command="{Binding Inform}"  />
+                        </WrapPanel.InputBindings>
+                        <Image Source="/HealthyLife_1;component/Img/Main/inform.png" Width="50"/>
+                        <TextBlock  Style="{DynamicResource PageBlockText}" Foreground="White"  Margin="10 0 0 0" VerticalAlignment="Center" Text="Справка"/>
+                    </WrapPanel>
+
+
+                </WrapPanel>
+            </Grid>
+       
+        
+        </StackPanel>
+
+
+
+        <!--<Grid Grid.Row="2" Background="#45685C">
+            <WrapPanel   Orientation="Horizontal">
+                <WrapPanel  Cursor="Hand" Style="{DynamicResource Footer}" >
+                    <WrapPanel.InputBindings>
+                        <MouseBinding Gesture="LeftClick" Command="{Binding Calcul}"  />
+                    </WrapPanel.InputBindings>
+                    <Image Source="/HealthyLife_1;component/Img/Main/food.png" Width="50"/>
+                    <TextBlock  Style="{DynamicResource PageBlockText}" Foreground="White"  Margin="10 0 0 0" VerticalAlignment="Center" Text="Питание"/>
+                </WrapPanel>
+                <WrapPanel  Cursor="Hand" Style="{DynamicResource Footer}" >
+                    <WrapPanel.InputBindings>
+                        <MouseBinding Gesture="LeftClick" Command="{Binding Pokazat}"  />
+                    </WrapPanel.InputBindings>
+                    <Image Source="/HealthyLife_1;component/Img/Main/health1.png" Width="50"/>
+                    <TextBlock  Style="{DynamicResource PageBlockText}" Foreground="White"  Margin="10 0 0 0" VerticalAlignment="Center" Text="Здоровье"/>
+                </WrapPanel>
+                <WrapPanel  Cursor="Hand" Style="{DynamicResource Footer}">
+                    <WrapPanel.InputBindings>
+                        <MouseBinding Gesture="LeftClick" Command="{Binding statistic}"  />
+                    </WrapPanel.InputBindings>
+                    <Image Source="/HealthyLife_1;component/Img/Main/statistics.png" Width="50"/>
+                    <TextBlock  Style="{DynamicResource PageBlockText}" Foreground="White"  Margin="10 0 0 0" VerticalAlignment="Center" Text="Статистика"/>
+                </WrapPanel>
+            </WrapPanel>
+        </Grid>-->
+
+
+    </Grid>
+
+
+
+
+
+</Window>

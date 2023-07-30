@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <LangVersion Condition=" '$(MSBuildProjectExtension)' == '.csproj' ">preview</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{69D60131-46B3-4CE9-A05B-DEE23329BB86}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HealthyLife_1</RootNamespace>
+    <AssemblyName>HealthyLife_1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.2\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="DataAnnotationsExtensions, Version=5.0.1.27, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DataAnnotationsExtensions.5.0.1.27\lib\NETFramework40\DataAnnotationsExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.4.1.0, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.39\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Expression.Blend.Sdk.1.0.2\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="CustomControls\admin\UserInform.xaml.cs">
+      <DependentUpon>UserInform.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\Application\footer.xaml.cs">
+      <DependentUpon>footer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\Application\header.xaml.cs">
+      <DependentUpon>header.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\Application\Line1.xaml.cs">
+      <DependentUpon>Line1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\Application\MyLine.xaml.cs">
+      <DependentUpon>MyLine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\Application\UserInform2.xaml.cs">
+      <DependentUpon>UserInform2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\Application\NoteUser.xaml.cs">
+      <DependentUpon>NoteUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\Application\QuizUser.xaml.cs">
+      <DependentUpon>QuizUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\Line.xaml.cs">
+      <DependentUpon>Line.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\Params\GraphUser.xaml.cs">
+      <DependentUpon>GraphUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\Params\ShugarParam.xaml.cs">
+      <DependentUpon>ShugarParam.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\PasswordBox.xaml.cs">
+      <DependentUpon>PasswordBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\Woter\WoterCup.xaml.cs">
+      <DependentUpon>WoterCup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\Woter\wotrControl.xaml.cs">
+      <DependentUpon>wotrControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Calcul.cs" />
+    <Compile Include="Models\Inform.cs" />
+    <Compile Include="Models\IUserRepository.cs" />
+    <Compile Include="Models\Note.cs" />
+    <Compile Include="Models\Notes.cs" />
+    <Compile Include="Models\Param.cs" />
+    <Compile Include="Models\Param\PressureModel.cs" />
+    <Compile Include="Models\Param\SugarModel.cs" />
+    <Compile Include="Models\Param\WeightModel.cs" />
+    <Compile Include="Models\Quiz.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Woter.cs" />
+    <Compile Include="Models\Yoga.cs" />
+    <Compile Include="Repositories\Admin\UserModel.cs" />
+    <Compile Include="Repositories\Grapf.cs" />
+    <Compile Include="Repositories\GrapfRepositor.cs" />
+    <Compile Include="Repositories\Repositories\CalculRepositor.cs" />
+    <Compile Include="Repositories\Repositories\InformRepositor.cs" />
+    <Compile Include="Repositories\Repositories\NoteRepositor.cs" />
+    <Compile Include="Repositories\Repositories\PressureRepositor.cs" />
+    <Compile Include="Repositories\Repositories\QuizRepozitor.cs" />
+    <Compile Include="Repositories\Repositories\ShugarRepositor.cs" />
+    <Compile Include="Repositories\Repositories\UserRepositor.cs" />
+    <Compile Include="Repositories\Repositories\WeightRepositor.cs" />
+    <Compile Include="Repositories\Repositories\WoterRepositor.cs" />
+    <Compile Include="Repositories\Repositories\YogaRepositor.cs" />
+    <Compile Include="Repositories\UnitOfWork\UnitOfWork.cs" />
+    <Compile Include="Repositories\UnitOfWork\UnitOwner.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Repositories\Admin\Admin.cs" />
+    <Compile Include="ViewModels\CalculFolder\CalculModel.cs" />
+    <Compile Include="ViewModels\CalculFolder\MealModel.cs" />
+    <Compile Include="ViewModels\Grapf\GrapfModel.cs" />
+    <Compile Include="ViewModels\LogIn\LoginViewModel.cs" />
+    <Compile Include="ViewModels\LogIn\RegistrationModel.cs" />
+    <Compile Include="ViewModels\Main\CalendarMaodel.cs" />
+    <Compile Include="ViewModels\Main\MainModel.cs" />
+    <Compile Include="ViewModels\Main\MainModelContex.cs" />
+    <Compile Include="ViewModels\Main\NoteModel.cs" />
+    <Compile Include="ViewModels\Main\QuizModel.cs" />
+    <Compile Include="ViewModels\Main\QuizTable.cs" />
+    <Compile Include="ViewModels\Main\Woter.cs" />
+    <Compile Include="ViewModels\Main\YogaModel.cs" />
+    <Compile Include="ViewModels\Param\Pokazat\PressureView.cs" />
+    <Compile Include="ViewModels\Param\Pokazat\ShugarTableViews.cs" />
+    <Compile Include="ViewModels\Param\Pokazat\ShugarView.cs" />
+    <Compile Include="ViewModels\Param\Pokazat\WeightView.cs" />
+    <Compile Include="ViewModels\Param\PrmView.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="ViewModels\ViewModelCommand.cs" />
+    <Compile Include="Views\CalculWwod\CalculWwod.xaml.cs">
+      <DependentUpon>CalculWwod.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Grapf.xaml.cs">
+      <DependentUpon>Grapf.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainApp\Calendar.xaml.cs">
+      <DependentUpon>Calendar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainApp\Meditation.xaml.cs">
+      <DependentUpon>Meditation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainApp\NotePage.xaml.cs">
+      <DependentUpon>NotePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainApp\Quiz.xaml.cs">
+      <DependentUpon>Quiz.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainApp\WoterView.xaml.cs">
+      <DependentUpon>WoterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\pages\AdminPage.xaml.cs">
+      <DependentUpon>AdminPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\pages\CalculPage.xaml.cs">
+      <DependentUpon>CalculPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\pages\CalendarPage.xaml.cs">
+      <DependentUpon>CalendarPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\pages\GraphPage.xaml.cs">
+      <DependentUpon>GraphPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\pages\InformPafe.xaml.cs">
+      <DependentUpon>InformPafe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\pages\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\pages\PrmPage.xaml.cs">
+      <DependentUpon>PrmPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Param\Pressure.xaml.cs">
+      <DependentUpon>Pressure.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Param\Sugar.xaml.cs">
+      <DependentUpon>Sugar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Param\Weight.xaml.cs">
+      <DependentUpon>Weight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Registretion.xaml.cs">
+      <DependentUpon>Registretion.xaml</DependentUpon>
+    </Compile>
+    <Page Include="CustomControls\admin\UserInform.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\Application\footer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\Application\header.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\Application\Line1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\Application\MyLine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\Application\UserInform2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomControls\Application\NoteUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\Application\QuizUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\Line.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\Params\GraphUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\Params\ShugarParam.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\PasswordBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\Woter\WoterCup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\Woter\wotrControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dictionary\Main\DictionaryMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\CalculWwod\CalculWwod.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Grapf.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainApp\Calendar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainApp\Meditation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainApp\NotePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainApp\Quiz.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainApp\WoterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\pages\AdminPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\pages\CalculPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\pages\CalendarPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\pages\GraphPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\pages\InformPafe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\pages\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\pages\PrmPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Param\Pressure.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Param\Sugar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Param\Weight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Registretion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\LogIn\Back.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\LogIn\fone3.jpg" />
+    <Resource Include="img\LogIn\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\LogIn\user.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\LogIn\user1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\LogIn\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Application\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Application\fone3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Main\woter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Main\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Main\right_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Main\left_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Main\Quiz\Sleep.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Main\Quiz\rest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Main\Param\sugar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Main\Param\pressure.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Main\Param\self.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Main\Param\davl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Main\Param\weight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Main\Quiz\self.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Main\Quiz\emotion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Main\Elem\calories.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Main\Elem\meditation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Main\Elem\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Main\woter\water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Application\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Application\clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Calendar\note.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CustomControls\Calendar\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Yoga\yoga1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Yoga\yoga2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Yoga\yoga3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Application\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\LogIn\people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\LogIn\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Main\food.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Main\health1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Main\statistics.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Application\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Main\inform.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,151 @@
+﻿<Page x:Class="HealthyLife_1.Views.pages.AdminPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HealthyLife_1.Views.pages"
+      mc:Ignorable="d" 
+      xmlns:viewModel="clr-namespace:HealthyLife_1.ViewModels.Main"
+          xmlns:control="clr-namespace:HealthyLife_1.CustomControls.Application"
+        
+         xmlns:elem="clr-namespace:HealthyLife_1.CustomControls.Application" xmlns:system="clr-namespace:System;assembly=mscorlib"
+      Title="AdminPage" Height="793" Width="1537"  >
+
+    <Page.DataContext>
+        <viewModel:MainModel/>
+    </Page.DataContext>
+
+
+    <Grid Background="#f0ede6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="271*" />
+            <RowDefinition Height="468*"/>
+        </Grid.RowDefinitions>
+        <WrapPanel   Orientation="Horizontal">
+            <WrapPanel.Background>
+                <ImageBrush ImageSource="/HealthyLife_1;component/img/Application/fone3.jpg"/>
+            </WrapPanel.Background>
+
+            <Border   Style="{StaticResource AdminInf}" >
+                <StackPanel  >
+
+                    <TextBlock Foreground="#FFBA00"  Margin=" 0 20 0 20 " Style="{DynamicResource PageBlockText}" Text="Редактировать информацию"/>
+
+                    <Separator Height="0.8" Background="#0C3B2E" Margin="10 0"/>
+                    <TextBlock  Style="{StaticResource InfText}" Text="О нас">
+                        <TextBlock.InputBindings>
+                            <MouseBinding Gesture="LeftClick" Command="{Binding ChangeAboutUs}"  />
+                        </TextBlock.InputBindings>
+                    </TextBlock>
+                    <Separator Height="0.8" Background="#0C3B2E" Margin="10 0"/>
+                    <TextBlock  Style="{StaticResource InfText}" Text="Водный баланс">
+                        <TextBlock.InputBindings>
+                            <MouseBinding Gesture="LeftClick" Command="{Binding ChangeWoter}"  />
+                        </TextBlock.InputBindings>
+                    </TextBlock>
+                    <Separator Height="0.8" Background="#0C3B2E" Margin="10 0"/>
+                    <TextBlock  Style="{StaticResource InfText}" Text="Quiz">
+                        <TextBlock.InputBindings>
+                            <MouseBinding Gesture="LeftClick" Command="{Binding ChangeQuiz}"  />
+                        </TextBlock.InputBindings>
+                    </TextBlock>
+                    <Separator Height="0.8" Background="#0C3B2E" Margin="10 0"/>
+                    <TextBlock  Style="{StaticResource InfText}" Text="Показатели">
+                        <TextBlock.InputBindings>
+                            <MouseBinding Gesture="LeftClick" Command="{Binding ChangeParam}"  />
+                        </TextBlock.InputBindings>
+                    </TextBlock>
+
+
+                </StackPanel>
+            </Border>
+            <Border   Style="{StaticResource AdminInf}" >
+                <StackPanel  >
+                    <TextBlock Foreground="#FFBA00"  Margin=" 0 20 0 20 " Style="{DynamicResource PageBlockText}" Text="Редактировать информацию"/>
+                    <!--<Image Source="/HealthyLife_1;component/Img/Main/Elem/calories.png" Style="{StaticResource PageBlockImg}">
+                        <Image.InputBindings>
+                            <MouseBinding Gesture="LeftClick" Command="{Binding AddCalcul}"  />
+                        </Image.InputBindings>
+                    </Image>-->
+                    <Border CornerRadius="10" Grid.Row="3" Height="140" Margin="15,-10,15,0" Background="#45685C">
+                        <ScrollViewer Margin="0 0 10 0">
+                            <TextBox MaxLength="500" Margin="10 0 0 0 " TextWrapping="Wrap"  Style="{StaticResource Inform}" Text="{Binding Inform}"/>
+                        </ScrollViewer>
+                    </Border>
+                    <Button  Command="{Binding ChangeInf}" Content="Сохранить" Margin="0 5 0 0" Style="{DynamicResource MyButtonStyle}" ></Button>
+                </StackPanel>
+            </Border>
+            <Border   Style="{StaticResource AdminInf}" >
+                <StackPanel Margin="0 -10 0 0"  >
+                    <TextBlock Foreground="#FFBA00"  Margin=" 0 20 0 20 " Style="{DynamicResource PageBlockText}" Text="Добавить упражение "/>
+                    <WrapPanel>
+                        <Border CornerRadius="10" Grid.Row="3" Height="140" Width="250" Margin="15,0,15,0" Background="#45685C">
+                            <ScrollViewer Margin="0 0 10 0">
+                                <TextBox MaxLength="500" Height="120" Width="210" VerticalAlignment="Top" Margin="10 10 0 0 " TextWrapping="Wrap"  Style="{StaticResource Inform}" Text="{Binding YogaText,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                    <TextBox.InputBindings>
+                                        <MouseBinding Gesture="LeftClick" Command="{Binding NullText}"  CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page}}}"   />
+                                    </TextBox.InputBindings>
+                                </TextBox>
+                            </ScrollViewer>
+                            
+                        </Border>
+                        <StackPanel Height="140">
+                            <Ellipse Width="100" Stroke="#cbdb14" StrokeThickness="3"  Height="100">
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="{Binding ImagePath}" />
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <WrapPanel Margin="0 10 0 0" Orientation="Horizontal" Height="20" Width="150">
+                                <Image  Cursor="Hand" Source="/img/LogIn/add.png" Width="20" HorizontalAlignment="Right" Margin="22 0 10 0">
+                                    <Image.InputBindings>
+                                        <MouseBinding Gesture="LeftClick" Command="{Binding AddAvatar}"  CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page}}}"   />
+                                    </Image.InputBindings>
+                                </Image>
+
+                                <TextBlock Text="Добавить img"
+                           Foreground="LightGray"
+                           FontSize="14"
+                           FontWeight="Medium"
+                           FontFamily="Montessart"
+                          TextWrapping="Wrap"
+                              TextAlignment="Center"
+                                       VerticalAlignment="Center"
+                          />
+                            </WrapPanel>
+
+                        </StackPanel>
+
+
+                    </WrapPanel>
+                    <Button  Command="{Binding SaveYoga}" Content="Сохранить" Margin="0 5 0 0" Style="{DynamicResource MyButtonStyle}" ></Button>
+                </StackPanel>
+            </Border>
+           
+        </WrapPanel>
+        
+        <Grid  Grid.Row="1">
+           
+            <ScrollViewer Margin="0 0 10 0">
+                <WrapPanel x:Name="UserBlock">
+
+                   
+                </WrapPanel>
+              
+
+
+            </ScrollViewer>
+
+
+
+        
+
+
+
+        </Grid>
+
+
+
+    </Grid>
+
+</Page>
+

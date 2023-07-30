@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="HealthyLife_1.CustomControls.Application.UserInform"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HealthyLife_1.CustomControls.Application"
+             mc:Ignorable="d" 
+             xmlns:viewModel="clr-namespace:HealthyLife_1.ViewModels.Main">
+  <Border    Style="{StaticResource UserBlock}" >
+        <StackPanel  >
+            <WrapPanel Margin="20,10,20,0" >
+
+                <Ellipse Width="120" Stroke="#FFBA00" StrokeThickness="3" Margin="110 10 0 0" Height="120">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="{Binding Path}" />
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Image Cursor="Hand" Source="/HealthyLife_1;component/Img/Application/delete.png" VerticalAlignment="Top" Margin="70 0 0 0" Width="50"  >
+                    <Image.InputBindings>
+                        <MouseBinding Gesture="LeftClick" Command="{Binding Delete}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"  />
+                    </Image.InputBindings>
+                </Image>
+            </WrapPanel>
+
+
+            <Border CornerRadius="30" Height="270" Grid.Row="3" Margin="20,20,20,20" Background="#45685C">
+                <StackPanel>
+                    <WrapPanel Margin="10 10 10 0">
+                        <TextBlock  Style="{StaticResource UserBase}" Text="ФИО: "/>
+                        <TextBlock  Style="{StaticResource UserText}" Text="{Binding Name}"/>
+                    </WrapPanel>
+                    <Separator Height="0.8" Background="#f0ede6" Margin="10 0"/>
+                    <WrapPanel Margin="10 10 10 0">
+                        <TextBlock  Style="{StaticResource UserBase}" Text="Вес: "/>
+                        <TextBlock  Style="{StaticResource UserText}" Text="{Binding Weight}"/>
+                    </WrapPanel>
+                    <Separator Height="0.8" Background="#f0ede6" Margin="10 0"/>
+                    <WrapPanel Margin="10 10 10 0">
+                        <TextBlock  Style="{StaticResource UserBase}" Text="Давление: "/>
+                        <TextBlock  Style="{StaticResource UserText}" Text="{Binding Pressure}"/>
+                    </WrapPanel>
+                    <Separator Height="0.8" Background="#f0ede6" Margin="10 0"/>
+                    <WrapPanel Margin="10 10 10 0">
+                        <TextBlock  Style="{StaticResource UserBase}" Text="Сахар: "/>
+                        <TextBlock  Style="{StaticResource UserText}" Text="{Binding Sugar}"/>
+                    </WrapPanel>
+                    <Separator Height="0.8" Background="#f0ede6" Margin="10 0"/>
+                    <WrapPanel Margin="10 10 10 0">
+                        <TextBlock  Style="{StaticResource UserBase}" Text="Ккал: "/>
+                        <TextBlock  Style="{StaticResource UserText}" Text="{Binding Kkal}"/>
+                    </WrapPanel>
+                    <Separator Height="0.8" Background="#f0ede6" Margin="10 0"/>
+                    <WrapPanel Margin="10 10 10 0">
+                        <TextBlock  Style="{StaticResource UserBase}" Text="Вода: "/>
+                        <TextBlock  Style="{StaticResource UserText}" Text="{Binding Woter}"/>
+                    </WrapPanel>
+
+
+
+                </StackPanel>
+
+            </Border>
+
+
+        </StackPanel>
+    </Border>
+</UserControl>

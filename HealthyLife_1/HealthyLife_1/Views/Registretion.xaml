@@ -1,0 +1,319 @@
+﻿<Window x:Class="HealthyLife_1.Views.Registretion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HealthyLife_1.Views"
+        mc:Ignorable="d"
+       xmlns:viewModel="clr-namespace:HealthyLife_1.ViewModels.LogIn"
+        xmlns:custom="clr-namespace:HealthyLife_1.CustomControls"
+       
+        Title="Registretion" Height="550" Width="800"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True"
+      
+        >
+    <Window.DataContext>
+        <viewModel:RegistrationModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisible"/>
+    </Window.Resources>
+
+    <Window.Visibility>
+        <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleanToVisible}"/>
+    </Window.Visibility>
+
+    <Border CornerRadius="12">
+        <Border.Background>
+            <ImageBrush ImageSource="/img/LogIn/Back.jpg"/>
+        </Border.Background>
+        
+        <Border CornerRadius="12" BorderThickness="5" Opacity="0.8">
+
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#858039" Offset="0" />
+                    <GradientStop Color="#5d9c43" Offset="0.75" />
+                    <GradientStop Color="#a8bd55" Offset="1" />
+
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,1">
+                    <GradientStop Color="#19301a" Offset="0" />
+                    <GradientStop Color="#33591d" Offset="0.75" />
+                    <GradientStop Color="#597014" Offset="1" />
+
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+
+
+
+
+
+
+
+                <TextBlock Text="Log In" Style="{DynamicResource Log}">
+                    <TextBlock.InputBindings>
+                                    <MouseBinding Gesture="LeftClick" Command="{Binding ChangePage}"  CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"   />
+                                </TextBlock.InputBindings>
+                </TextBlock>
+                <Button x:Name="btnexit"
+                            Background="#cbdb14"
+                            BorderThickness="0"
+                        HorizontalAlignment="Right"
+                            Width="30"
+                             Height="30"
+                            Content="X"
+                        Margin="0 0 10 0"
+                            Foreground="#818a22"
+                            FontSize="16"
+                           FontFamily="Montsaerrart" 
+                            Cursor="Hand"
+                            Grid.Column="2"
+                           Command="{Binding btnExit}">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#cbdb14"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#aeba29"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="18" Height="18" CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                            </Border>
+
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+
+
+
+
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="167*"/>
+                        <RowDefinition Height="254*"/>
+                        <RowDefinition Height="79*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Height="140">
+                        <Ellipse Width="100" Stroke="#cbdb14" StrokeThickness="3"  Height="100">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="{Binding ImagePath}" />
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <WrapPanel Margin="0 10 0 0" Orientation="Horizontal" Height="20" Width="150">
+                            <Image  Cursor="Hand" Source="/img/LogIn/add.png" Width="20" HorizontalAlignment="Right" Margin="0 0 10 0">
+                                <Image.InputBindings>
+                                    <MouseBinding Gesture="LeftClick" Command="{Binding AddAvatar}"  CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page}}}"   />
+                                </Image.InputBindings>
+                            </Image>
+
+                            <TextBlock Text="Добавить аватар"
+                           Foreground="LightGray"
+                           FontSize="14"
+                           FontWeight="Medium"
+                           FontFamily="Montessart"
+                          TextWrapping="Wrap"
+                              TextAlignment="Center"
+                                       VerticalAlignment="Center"
+                          />
+                        </WrapPanel>
+
+                    </StackPanel>
+                    
+                    
+                    
+                    <StackPanel Height="200" Width="250" Grid.Row="1">
+                        <!--<TextBlock Text="Only daily work on oneself will help to withstand the blow of fate and prolong a healthy and happy life"
+                           Foreground="LightGray"
+                           FontSize="10"
+                           FontWeight="Medium"
+                           FontFamily="Montessart"
+                          TextWrapping="Wrap"
+                              TextAlignment="Center"
+                           Margin=" 0,5, 0 ,0"/>-->
+
+                        <TextBlock Text="ФИО"
+                           Foreground="White"
+                           FontSize="12"
+                           FontWeight="Medium"
+                           FontFamily="Montessart"
+                          Margin=" 0,0, 0 ,0"/>
+
+                        <TextBox 
+                               FontSize="13"
+                                 Height="28"
+                       Foreground="White"
+                                 MaxLength="20"
+                               FontWeight="Medium"
+                               FontFamily="Montessart"
+                                   Padding="30 8 0 0 "
+                                 Text="{Binding Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                 
+                                 
+                                 Margin="0,5,0,0" BorderBrush="DarkGray" BorderThickness="0,0,0,1"
+                             >
+
+                            <TextBox.Background>
+                                <ImageBrush ImageSource="/img/LogIn/people.png"
+                                            Stretch="Uniform"
+                                            AlignmentX="Left"
+                                            
+                                            >
+
+                                </ImageBrush>
+                            </TextBox.Background>
+
+                        </TextBox>
+                        <TextBlock Text="{Binding errorName}"
+                           Foreground="#bd380b"
+                           FontSize="12"
+                           FontWeight="Medium"
+                           FontFamily="Montessart"
+                          Margin=" 0,4, 0 ,4"
+                               TextWrapping="Wrap"/>
+
+                      
+
+
+
+
+
+
+
+                        <TextBlock Text="Логин"
+                           Foreground="White"
+                           FontSize="12"
+                           FontWeight="Medium"
+                           FontFamily="Montessart"
+                         />
+
+                        <TextBox x:Name="txtUser"
+                               FontSize="13"
+                                 Height="28"
+                       Foreground="White"
+                                 MaxLength="20"
+                               FontWeight="Medium"
+                               FontFamily="Montessart"
+                                   Padding="30 8 0 0 "
+                                 Text="{Binding Login,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                 
+                                 
+                                 Margin="0,5,0,0" BorderBrush="DarkGray" BorderThickness="0,0,0,1"
+                             >
+                            
+                            <TextBox.Background>
+                                <ImageBrush ImageSource="/img/LogIn/user1.png"
+                                            Stretch="Uniform"
+                                            AlignmentX="Left"
+                                            
+                                            >
+
+                                </ImageBrush>
+                            </TextBox.Background>
+
+                        </TextBox>
+                        <TextBlock Text="{Binding errorLogin}"
+                           Foreground="#bd380b"
+                           FontSize="12"
+                           FontWeight="Medium"
+                           FontFamily="Montessart"
+                          Margin=" 0,4, 0 ,4"
+                               TextWrapping="Wrap"/>
+                        <TextBlock Text="Пароль"
+                           Foreground="White"
+                           FontSize="12"
+                           FontWeight="Medium"
+                           FontFamily="Montessart"
+                         />
+                        <custom:PasswordBox Password="{Binding Password, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                        Height="28"
+                        Margin=" 0 0 0 0">
+
+                        </custom:PasswordBox>
+                        <TextBlock Text="{Binding errorPass}"
+                           Foreground="#bd380b"
+                           FontSize="12"
+                           FontWeight="Medium"
+                           FontFamily="Montessart"
+                         Margin=" 0,4, 0 ,4"
+                               TextWrapping="Wrap"/>
+
+
+                    </StackPanel>
+
+
+
+                    <StackPanel Grid.Row="2">
+                        <TextBlock TextAlignment="Center"  Grid.Row="2" Text="{Binding ButtonError}"
+                           Foreground="#bd380b"
+                           FontSize="12"
+                           FontWeight="Medium"
+                           FontFamily="Montessart"
+                         Margin=" 0,4, 0 ,4"
+                               TextWrapping="Wrap"/>
+
+                        <Button  x:Name="btnreg"
+                            Background="#cbdb14"
+                            BorderThickness="0"
+                           
+                            Content="Регистрация"
+                            Foreground="White"
+                            FontSize="16"
+                           FontFamily="Montsaerrart" 
+                            Cursor="Hand"
+                        VerticalAlignment="Center"
+                                 CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}" 
+                          Command="{Binding Registration}" Height="40">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="#cbdb14"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#aeba29"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="150" Height="40" CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                    </Border>
+
+                                </ControlTemplate>
+                            </Button.Template>
+
+                        </Button>
+                    </StackPanel>
+                    
+                </Grid>
+            </Grid>
+
+
+        </Border>
+    </Border>
+</Window>
